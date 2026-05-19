@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Find Mumbai Adda in Sutton, London. Address, opening hours, contact details and delivery platforms.">
+<title>Find Us — Mumbai Adda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700;1,9..144,900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=Instrument+Serif:ital@0;1&family=Yatra+One&display=swap" rel="stylesheet">
+<style>
+:root{
+  --saffron:#F07818;--saffron-hot:#FF8C25;--chilli:#C01808;
+  --turmeric:#D49010;--gold:#F0C040;--cream:#FBF4E6;
+  --parchment:#F0E4C8;--dark:#160C04;--dark2:#1E1008;
+  --espresso:#2C1508;--mid:#583018;--muted:#986848;
+  --border-dark:rgba(255,255,255,0.08);--border-cream:rgba(88,48,24,0.12);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--dark);color:#fff;overflow-x:hidden}
+a{text-decoration:none}
+
+/* ── NAV ── */
+
+
+
+
+
+
+
+
+
+/* ── HERO ── */
+.page-hero{
+  margin-top:68px;
+  height:320px;position:relative;overflow:hidden;
+  display:flex;align-items:flex-end;padding:0 3rem 3rem;
+}
+.page-hero-bg{
+  position:absolute;inset:0;
+  background:url('https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?auto=format&fit=crop&w=1600&q=85') center 30%/cover no-repeat;
+  filter:brightness(.22) saturate(1.2);
+}
+.page-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,var(--dark) 0%,transparent 65%)}
+.page-hero-content{position:relative;z-index:2}
+.page-eyebrow{font-size:.68rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--saffron);margin-bottom:.6rem;display:flex;align-items:center;gap:.7rem}
+.page-eyebrow::before{content:'';width:18px;height:1px;background:var(--saffron)}
+.page-title{font-family:'Fraunces',serif;font-size:clamp(2.5rem,6vw,5rem);font-weight:900;letter-spacing:-.04em;line-height:.9;color:#fff}
+.page-title em{color:var(--saffron);font-style:italic;font-weight:300}
+
+/* ── MAIN GRID ── */
+.main-grid{
+  display:grid;grid-template-columns:1fr 1.3fr;
+  min-height:calc(100vh - 68px - 320px);
+}
+
+/* ── LEFT — INFO PANEL ── */
+.info-panel{
+  background:var(--dark2);padding:5rem 3rem;
+  border-right:1px solid var(--border-dark);
+  display:flex;flex-direction:column;gap:0;
+}
+
+.info-block{
+  padding:2rem 0;
+  border-bottom:1px solid var(--border-dark);
+}
+.info-block:first-child{padding-top:0}
+.info-block:last-child{border-bottom:none}
+
+.info-icon-label{
+  display:flex;align-items:center;gap:.6rem;
+  font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--saffron);margin-bottom:.8rem;
+}
+.info-icon{font-size:1rem}
+.info-value{font-size:1rem;color:rgba(255,255,255,.75);line-height:1.6;font-weight:400}
+.info-value a{color:rgba(255,255,255,.75);transition:color .2s}
+.info-value a:hover{color:var(--saffron)}
+.info-sub{font-size:.8rem;color:rgba(255,255,255,.3);margin-top:.3rem}
+
+/* hours table */
+.hours-table{width:100%;border-collapse:collapse}
+.hours-table tr{border-bottom:1px solid rgba(255,255,255,.05)}
+.hours-table tr:last-child{border-bottom:none}
+.hours-table td{padding:.55rem 0;font-size:.88rem}
+.hours-table td:first-child{color:rgba(255,255,255,.45);width:50%}
+.hours-table td:last-child{color:rgba(255,255,255,.7);text-align:right}
+.hours-table tr.today td{color:var(--saffron)!important;font-weight:600}
+.today-badge{display:inline-block;background:rgba(240,120,24,.15);color:var(--saffron);font-size:.6rem;font-weight:700;padding:.12rem .45rem;border-radius:2px;margin-left:.5rem;letter-spacing:.08em;text-transform:uppercase;vertical-align:middle}
+
+/* areas served */
+.areas{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.5rem}
+.area-tag{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.5);font-size:.75rem;padding:.3rem .8rem;border-radius:20px}
+
+/* order platforms in info panel */
+.plat-mini-list{display:flex;flex-direction:column;gap:.6rem;margin-top:.3rem}
+.plat-mini{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.85rem 1rem;
+  background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);
+  border-radius:3px;transition:all .2s;
+}
+.plat-mini:hover{background:rgba(240,120,24,.07);border-color:rgba(240,120,24,.2);transform:translateX(4px)}
+.plat-mini-left{display:flex;align-items:center;gap:.8rem}
+.plat-mini-ico{font-size:1.3rem}
+.plat-mini-name{font-family:'Fraunces',serif;font-size:.95rem;font-weight:700;color:#fff}
+.plat-mini-sub{color:rgba(255,255,255,.3);font-size:.7rem;margin-top:.1rem}
+.plat-mini-arr{color:var(--saffron);transition:transform .2s}
+.plat-mini:hover .plat-mini-arr{transform:translateX(4px)}
+
+/* ── RIGHT — MAP + EXTRAS ── */
+.map-panel{display:flex;flex-direction:column}
+.map-embed{
+  flex:1;min-height:450px;
+  position:relative;overflow:hidden;
+}
+.map-embed iframe{width:100%;height:100%;border:0;display:block}
+
+/* getting here strip */
+.getting-here{
+  background:var(--espresso);
+  padding:3rem;
+  display:grid;grid-template-columns:1fr 1fr;gap:2rem;
+}
+.gh-item{}
+.gh-label{font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--saffron);margin-bottom:.6rem;display:flex;align-items:center;gap:.5rem}
+.gh-label-icon{font-size:.9rem}
+.gh-text{color:rgba(255,255,255,.45);font-size:.88rem;line-height:1.7;font-weight:300}
+
+/* ── FULL WIDTH SECTIONS ── */
+.full-order{
+  padding:7rem 3rem;
+  background:var(--dark);
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:8rem;align-items:center;
+  position:relative;overflow:hidden;
+}
+.full-order::before{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(240,120,24,.07) 0%,transparent 70%);right:-100px;top:50%;transform:translateY(-50%);pointer-events:none}
+.fo-text .s-eyebrow{margin-bottom:.7rem}
+.fo-title{font-family:'Fraunces',serif;font-size:clamp(2.5rem,4.5vw,4rem);font-weight:900;letter-spacing:-.035em;line-height:.92;color:#fff;margin-bottom:1.5rem}
+.fo-title em{color:var(--saffron);font-style:italic;font-weight:300}
+.fo-desc{color:rgba(255,255,255,.4);font-size:.97rem;line-height:1.9;font-weight:300}
+.fo-plats{display:flex;flex-direction:column;gap:.8rem}
+.fo-plat{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.4rem 1.6rem;
+  background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);
+  border-radius:4px;transition:all .25s;position:relative;overflow:hidden;
+}
+.fo-plat::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;transform:scaleY(0);transition:transform .3s;transform-origin:bottom}
+.fo-plat.p-roo::before{background:#00CCBC} .fo-plat.p-je::before{background:#FF8100}
+.fo-plat.p-ue::before{background:#06C167}
+.fo-plat.p-roo:hover{background:rgba(0,204,188,.06);border-color:rgba(0,204,188,.2);transform:translateX(6px)}
+.fo-plat.p-je:hover{background:rgba(255,129,0,.06);border-color:rgba(255,129,0,.2);transform:translateX(6px)}
+.fo-plat.p-ue:hover{background:rgba(6,193,103,.06);border-color:rgba(6,193,103,.2);transform:translateX(6px)}
+.fo-plat:hover::before{transform:scaleY(1)}
+.fo-plat-l{display:flex;align-items:center;gap:1rem}
+.fo-plat-ico{width:40px;height:40px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:800;flex-shrink:0}
+.fo-plat.p-roo .fo-plat-ico{background:#00CCBC;color:#fff}
+.fo-plat.p-je  .fo-plat-ico{background:#FF8100;color:#fff}
+.fo-plat.p-ue  .fo-plat-ico{background:#000;color:#06C167;border:1px solid rgba(6,193,103,.25)}
+.fo-plat-arr{transition:transform .2s}
+.fo-plat.p-roo .fo-plat-arr{color:#00CCBC}
+.fo-plat.p-je  .fo-plat-arr{color:#FF8100}
+.fo-plat.p-ue  .fo-plat-arr{color:#06C167}
+.fo-plat:hover .fo-plat-arr{transform:translateX(4px)}
+.fo-plat-name{font-family:'Fraunces',serif;font-size:1.1rem;font-weight:700;color:#fff}
+.fo-plat-sub{color:rgba(255,255,255,.28);font-size:.76rem;margin-top:.1rem}
+.fo-plat-arr{color:var(--saffron);font-size:1.2rem;transition:transform .2s}
+.fo-plat:hover .fo-plat-arr{transform:translateX(4px)}
+
+/* ── NEIGHBOURHOOD STRIP ── */
+.neighbourhood{
+  background:var(--saffron);
+  padding:3.5rem 3rem;
+  display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;
+}
+.nbh-text h3{font-family:'Fraunces',serif;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:900;color:var(--dark);letter-spacing:-.025em}
+.nbh-text h3 em{font-style:italic;font-weight:300}
+.nbh-text p{color:rgba(22,12,4,.55);font-size:.9rem;margin-top:.4rem}
+.nbh-areas{display:flex;gap:.6rem;flex-wrap:wrap}
+.nbh-area{background:rgba(22,12,4,.1);color:var(--dark);font-size:.82rem;font-weight:600;padding:.45rem 1rem;border-radius:30px;border:1px solid rgba(22,12,4,.15)}
+
+/* ── FOOTER ── */
+footer{background:var(--dark);border-top:3px solid var(--saffron);padding:4rem 3rem 2.5rem}
+.ft-top{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3.5rem;border-bottom:1px solid var(--border-dark)}
+
+
+
+
+
+
+.ft-col h4{font-size:.62rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.2);margin-bottom:1.2rem}
+.ft-col ul{list-style:none}
+.ft-col ul li{margin-bottom:.55rem}
+.ft-col ul a{color:rgba(255,255,255,.32);font-size:.9rem;transition:color .2s}
+.ft-col ul a:hover{color:var(--saffron)}
+.ft-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:2.5rem;flex-wrap:wrap;gap:1rem}
+.ft-bottom p{color:rgba(255,255,255,.14);font-size:.78rem}
+.ft-bottom span{color:var(--saffron)}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .main-grid{grid-template-columns:1fr}
+  .map-embed{min-height:360px}
+  .getting-here{grid-template-columns:1fr 1fr}
+  .full-order{grid-template-columns:1fr;gap:3rem}
+  .ft-top{grid-template-columns:1fr 1fr;gap:2rem}
+}
+@media(max-width:768px){
+  
+  
+  
+  .page-hero{padding:0 1.2rem 2.5rem;height:240px}
+  .page-title{font-size:clamp(2rem,9vw,3.5rem)}
+  .info-panel{padding:3rem 1.5rem}
+  .map-embed{min-height:280px}
+  .getting-here{padding:2rem 1.5rem;grid-template-columns:1fr}
+  .full-order{padding:5rem 1.5rem;gap:2.5rem}
+  .neighbourhood{padding:2.5rem 1.5rem;flex-direction:column;align-items:flex-start}
+  footer{padding:3rem 1.5rem 2rem}
+  .ft-top{grid-template-columns:1fr;gap:2rem;padding-bottom:2rem}
+  .ft-bottom{flex-direction:column;align-items:flex-start;gap:.4rem}
+}
+/* ── SHARED NAV + DROPDOWN CSS ── */
+
+
+
+
+.nav-links { display:flex; gap:2rem; list-style:none; align-items:center; }
+.nav-links a { color:rgba(255,255,255,.75); font-size:.86rem; letter-spacing:.01em; transition:color .2s; font-weight:500; text-decoration:none; }
+
+
+
+.nav-cta {
+  display:flex; align-items:center; gap:.5rem;
+  background:#F07818; color:#160C04;
+  padding:.62rem 1.6rem; font-size:.84rem; font-weight:700;
+  border-radius:2px; transition:all .2s; cursor:pointer;
+  border:none; font-family:'DM Sans',sans-serif; user-select:none;
+}
+.nav-cta:hover { background:#FF8C25; }
+
+
+
+
+
+
+
+
+
+
+
+
+/* ── STICKY ORDER BAR ── */
+#sticky-bar {
+  position:fixed; bottom:0; left:0; right:0; z-index:300;
+  background:rgba(22,12,4,.97); backdrop-filter:blur(20px);
+  border-top:1px solid rgba(240,120,24,.2);
+  padding:.9rem 3rem;
+  display:flex; align-items:center; justify-content:space-between;
+  transform:translateY(100%);
+  transition:transform .4s cubic-bezier(.16,1,.3,1); gap:1rem;
+}
+#sticky-bar.visible { transform:translateY(0); }
+.sticky-text { font-family:'Fraunces',serif; font-size:1rem; font-weight:700; color:#fff; }
+.sticky-text span { color:#F07818; font-style:italic; font-weight:300; }
+.sticky-platforms { display:flex; gap:.6rem; flex-wrap:nowrap; }
+.sticky-plat { display:inline-flex; align-items:center; gap:.5rem; padding:.55rem 1.1rem; font-size:.8rem; font-weight:700; border-radius:3px; transition:all .2s; white-space:nowrap; text-decoration:none; }
+.sp-deliveroo { background:#00CCBC; color:#fff; }
+.sp-deliveroo:hover { background:#00b5a5; }
+.sp-justeat   { background:#FF8100; color:#fff; }
+.sp-justeat:hover   { background:#E57200; }
+.sp-uber { background:#000; color:#06C167; border:1px solid rgba(6,193,103,.3); }
+.sp-uber:hover { background:#111; }
+
+/* ── THEME TOGGLE ── */
+#theme-toggle {
+  position:fixed; top:50%; right:0;
+  transform:translateY(-50%); z-index:450;
+  background:#2C1508; border:1px solid rgba(255,255,255,.12);
+  border-right:none; border-radius:8px 0 0 8px;
+  padding:.6rem .5rem; cursor:pointer;
+  display:flex; flex-direction:column; align-items:center; gap:.35rem;
+  transition:background .3s; box-shadow:-4px 0 20px rgba(0,0,0,.3);
+}
+#theme-toggle:hover { background:#583018; }
+#theme-toggle .tt-icon { font-size:1rem; line-height:1; }
+#theme-toggle .tt-label { font-size:.52rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,.45); writing-mode:vertical-rl; transform:rotate(180deg); }
+
+/* ── FOOTER BRAND ── */
+.ft-brand { display:flex; align-items:center; gap:.8rem; margin-bottom:.8rem; }
+.ft-brand-svg { height:44px; width:auto; flex-shrink:0; }
+.ft-brand-text { line-height:1; }
+.ft-brand-text .ft-name { font-family:'Yatra One','Fraunces',serif; font-size:1.8rem; font-weight:400; color:#fff; letter-spacing:.02em; display:block; text-shadow:0 0 20px rgba(240,120,24,.4); }
+.ft-brand-text .ft-sub  { font-family:'Fraunces',serif; font-size:.9rem; font-style:italic; font-weight:300; color:#F07818; display:block; margin-top:.15rem; }
+.ft-tagline { font-family:'Instrument Serif',serif; font-style:italic; color:rgba(255,255,255,.35); font-size:.92rem; line-height:1.8; margin-bottom:1.5rem; }
+.ft-soc { display:flex; gap:.8rem; }
+.ft-soc a { width:38px; height:38px; border-radius:50%; border:1px solid rgba(255,255,255,.12); display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,.4); transition:all .2s; }
+.ft-soc a:hover { border-color:#F07818; color:#F07818; }
+
+/* ── SHARED JS ── */
+
+
+/* ── LIGHT MODE ── */
+
+/* ── LIGHT MODE FIND US TEXT FIXES ── */
+body.light-mode .info-panel { background:var(--parchment) !important; }
+body.light-mode .info-value { color:rgba(60,22,8,.75) !important; }
+body.light-mode .info-value a { color:rgba(60,22,8,.75) !important; }
+body.light-mode .info-sub { color:rgba(60,22,8,.4) !important; }
+body.light-mode .info-block { border-bottom-color:rgba(88,48,24,.1) !important; }
+body.light-mode .info-icon-label { color:var(--chilli) !important; }
+body.light-mode .hours-table td:first-child { color:rgba(60,22,8,.5) !important; }
+body.light-mode .hours-table td:last-child { color:rgba(60,22,8,.7) !important; }
+body.light-mode .hours-table tr.today td { color:var(--chilli) !important; }
+body.light-mode .area-tag { color:rgba(60,22,8,.55) !important; background:rgba(88,48,24,.07) !important; border-color:rgba(88,48,24,.12) !important; }
+body.light-mode .plat-mini { background:rgba(88,48,24,.04) !important; border-color:rgba(88,48,24,.08) !important; }
+body.light-mode .plat-mini:hover { background:rgba(200,40,8,.05) !important; border-color:rgba(200,40,8,.15) !important; }
+body.light-mode .plat-mini-name { color:var(--dark) !important; }
+body.light-mode .plat-mini-sub { color:var(--muted) !important; }
+body.light-mode .getting-here { background:var(--cream) !important; }
+body.light-mode .gh-text { color:var(--muted) !important; }
+body.light-mode .nbh-text h3 { color:var(--dark) !important; }
+body.light-mode .fo-plat { background:rgba(88,48,24,.04) !important; border-color:rgba(88,48,24,.08) !important; }
+body.light-mode .fo-plat-name { color:var(--dark) !important; }
+body.light-mode .fo-plat-sub { color:var(--muted) !important; }
+body.light-mode .full-order { background:var(--parchment) !important; }
+body.light-mode .fo-title { color:var(--dark) !important; }
+body.light-mode .fo-title em { color:var(--chilli) !important; }
+body.light-mode .fo-desc { color:var(--muted) !important; }
+
+body.light-mode { background:#FBF4E6 !important; color:#160C04 !important; }
+body.light-mode 
+body.light-mode 
+
+body.light-mode #sticky-bar { background:rgba(253,246,230,.97) !important; border-top-color:rgba(88,48,24,.12) !important; }
+body.light-mode .sticky-text { color:#160C04 !important; }
+body.light-mode footer, body.light-mode footer > div { background:#1E1008 !important; }
+body.light-mode #theme-toggle { background:#F0E4C8 !important; border-color:rgba(88,48,24,.2) !important; }
+body.light-mode #theme-toggle .tt-label { color:rgba(60,22,8,.5) !important; }
+
+
+/* ══ UNIVERSAL NAV ══ */
+#site-nav,nav.site-nav,nav:not([class]) {
+  position:fixed; top:0; left:0; right:0; z-index:400;
+  display:flex; justify-content:space-between; align-items:center;
+  padding:0 3rem; height:68px;
+  background:rgba(22,12,4,.97);
+  backdrop-filter:blur(24px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  transition:background .3s, box-shadow .3s;
+}
+nav.scrolled { box-shadow:0 4px 30px rgba(0,0,0,.4); }
+
+.nav-logo {
+  font-family:'Fraunces',serif;
+  font-size:1.55rem; font-weight:900;
+  color:#fff; letter-spacing:-.025em;
+  text-decoration:none; flex-shrink:0;
+  transition:color .2s;
+}
+.nav-logo em { color:var(--saffron); font-style:italic; font-weight:300; }
+
+.nav-links { display:flex; gap:2.5rem; list-style:none; align-items:center; }
+.nav-links a {
+  color:rgba(255,255,255,.5); font-size:.84rem; font-weight:500;
+  letter-spacing:.01em; transition:color .2s; text-decoration:none;
+}
+.nav-links a:hover, .nav-links a.active { color:var(--saffron); }
+
+.nav-cta {
+  background:var(--saffron); color:var(--dark);
+  padding:.62rem 1.6rem; font-size:.84rem; font-weight:700;
+  border-radius:2px; transition:all .2s; text-decoration:none; flex-shrink:0;
+}
+.nav-cta:hover { background:var(--saffron-hot); transform:translateY(-1px); }
+
+/* light mode */
+body.light-mode nav:not([class]),
+body.light-mode #site-nav,
+body.light-mode nav.site-nav {
+  background:rgba(253,246,230,.97);
+  border-bottom-color:rgba(88,48,24,.12);
+}
+body.light-mode .nav-logo { color:var(--dark); }
+body.light-mode .nav-links a { color:rgba(60,22,8,.5); }
+body.light-mode .nav-links a:hover,
+body.light-mode .nav-links a.active { color:var(--chilli); }
+
+/* mobile */
+@media(max-width:768px) {
+  #site-nav, nav:not([class]), nav.site-nav { padding:0 1.2rem; height:60px; }
+  .nav-links { display:none; }
+  .nav-logo { font-size:1.25rem; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<!-- ══ THEME TOGGLE ══ -->
+<button id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark/light mode">
+  <span class="tt-icon" id="tt-icon">☀️</span>
+  <span class="tt-label" id="tt-label">Light</span>
+</button>
+<nav>
+  <a href="index.html" class="nav-logo">Mumbai<em>Adda</em></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="menu.html">Menu</a></li>
+    <li><a href="our-story.html">Our Story</a></li>
+    <li><a href="find-us.html" class="active">Find Us</a></li>
+  </ul>
+  <a href="#order" class="nav-cta">Order Now →</a>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-content">
+    <div class="page-eyebrow">Mumbai Adda · Sutton, London</div>
+    <h1 class="page-title">Come find <em>us</em></h1>
+  </div>
+</div>
+
+<!-- MAIN GRID -->
+<div class="main-grid">
+
+  <!-- LEFT — INFO -->
+  <div class="info-panel">
+
+    <div class="info-block reveal">
+      <div class="info-icon-label"><span class="info-icon">📍</span>Address</div>
+      <div class="info-value">
+        10 Station Parade<br>Brighton Road<br>Sutton, SM2 5AD<br>London
+      </div>
+      <div class="info-sub">Near Sutton train station, on Brighton Road</div>
+    </div>
+
+    <div class="info-block reveal">
+      <div class="info-icon-label"><span class="info-icon">🕐</span>Opening Hours</div>
+      <table class="hours-table" id="hours-table">
+        <tr data-day="Monday"><td>Monday</td><td>11:30 – 21:00</td></tr>
+        <tr data-day="Tuesday"><td>Tuesday</td><td>11:30 – 21:00</td></tr>
+        <tr data-day="Wednesday"><td>Wednesday</td><td>11:30 – 21:00</td></tr>
+        <tr data-day="Thursday"><td>Thursday</td><td>11:30 – 21:00</td></tr>
+        <tr data-day="Friday"><td>Friday</td><td>11:30 – 22:00</td></tr>
+        <tr data-day="Saturday"><td>Saturday 🍚</td><td>11:30 – 22:00</td></tr>
+        <tr data-day="Sunday"><td>Sunday</td><td>11:30 – 21:00</td></tr>
+      </table>
+      <div class="info-sub" style="margin-top:.8rem">Saturday Biryani available from 11:30am — limited portions</div>
+    </div>
+
+    <div class="info-block reveal">
+      <div class="info-icon-label"><span class="info-icon">📞</span>Phone & WhatsApp</div>
+      <div class="info-value">
+        <a href="tel:+447887503324">+44 7887 503324</a>
+      </div>
+      <div class="info-sub">Call or WhatsApp to order directly</div>
+    </div>
+
+    <div class="info-block reveal">
+      <div class="info-icon-label"><span class="info-icon">✉️</span>Email</div>
+      <div class="info-value">
+        <a href="mailto:info@mumbaiadda.com">info@mumbaiadda.com</a>
+      </div>
+    </div>
+
+    <div class="info-block reveal">
+      <div class="info-icon-label"><span class="info-icon">📱</span>Follow Us</div>
+      <div class="info-value">
+        <a href="https://www.instagram.com/mumbaiadda_london/" target="_blank">Instagram</a> · 
+        <a href="https://www.facebook.com/mumbaiaddalondon" target="_blank">Facebook</a>
+      </div>
+      <div class="info-sub">Tag us when your order arrives — we love seeing it</div>
+    </div>
+
+    <div class="info-block reveal">
+      <div class="info-icon-label"><span class="info-icon">🛵</span>Order Online</div>
+      <div class="plat-mini-list">
+        <a href="https://deliveroo.co.uk/menu/london/sutton/mumbai-adda" target="_blank" rel="noopener" class="plat-mini">
+          <div class="plat-mini-left"><div class="plat-mini-ico" style="width:32px;height:32px;border-radius:5px;display:flex;align-items:center;justify-content:center;background:#00CCBC;color:#fff;font-size:.65rem;font-weight:800">roo</div><div><div class="plat-mini-name">Deliveroo</div><div class="plat-mini-sub">Fast delivery across Sutton</div></div></div>
+          <div class="plat-mini-arr">→</div>
+        </a>
+        <a href="https://www.just-eat.co.uk/restaurants-mumbai-adda-sutton/menu" target="_blank" rel="noopener" class="plat-mini">
+          <div class="plat-mini-left"><div class="plat-mini-ico" style="width:32px;height:32px;border-radius:5px;display:flex;align-items:center;justify-content:center;background:#FF8100;color:#fff;font-size:.65rem;font-weight:800">JE</div><div><div class="plat-mini-name">Just Eat</div><div class="plat-mini-sub">Order and track in real time</div></div></div>
+          <div class="plat-mini-arr">→</div>
+        </a>
+        <a href="https://www.ubereats.com/gb/store/mumbai-adda" target="_blank" rel="noopener" class="plat-mini">
+          <div class="plat-mini-left"><div class="plat-mini-ico" style="width:32px;height:32px;border-radius:5px;display:flex;align-items:center;justify-content:center;background:#000;color:#06C167;font-size:.65rem;font-weight:800;border:1px solid rgba(6,193,103,.25)">UE</div><div><div class="plat-mini-name">Uber Eats</div><div class="plat-mini-sub">Quick delivery or pickup</div></div></div>
+          <div class="plat-mini-arr">→</div>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- RIGHT — MAP -->
+  <div class="map-panel">
+    <div class="map-embed">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2491.8!2d-0.19720!3d51.35940!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487609b6b3cf1e55%3A0x0!2s10+Station+Parade%2C+Brighton+Rd%2C+Sutton+SM2+5AD!5e0!3m2!1sen!2suk!4v1"
+        allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+    <div class="getting-here reveal">
+      <div class="gh-item">
+        <div class="gh-label"><span class="gh-label-icon">🚆</span>By Train</div>
+        <div class="gh-text">Sutton station is a 3-minute walk. Served by Southern, Thameslink and Tramlink. Exit onto Brighton Road — we're right there.</div>
+      </div>
+      <div class="gh-item">
+        <div class="gh-label"><span class="gh-label-icon">🚌</span>By Bus</div>
+        <div class="gh-text">Bus routes 80, 93, 154, 407, 413 and S1 all stop nearby on Brighton Road. Short walk from Sutton town centre.</div>
+      </div>
+      <div class="gh-item">
+        <div class="gh-label"><span class="gh-label-icon">🚗</span>By Car</div>
+        <div class="gh-text">Parking available on Station Parade and nearby Throwley Way car park (short walk). Congestion-free at most meal times.</div>
+      </div>
+      <div class="gh-item">
+        <div class="gh-label"><span class="gh-label-icon">🛵</span>Delivery</div>
+        <div class="gh-text">We deliver across Sutton, Cheam, Worcester Park, Belmont and Carshalton. Check your postcode on Deliveroo, Just Eat or Uber Eats.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- NEIGHBOURHOOD STRIP -->
+<div class="neighbourhood reveal">
+  <div class="nbh-text">
+    <h3>Proudly serving <em>Sutton</em> & beyond</h3>
+    <p>Delivering to these areas and more — check your platform for exact coverage</p>
+  </div>
+  <div class="nbh-areas">
+    <div class="nbh-area">📍 Sutton</div>
+    <div class="nbh-area">📍 Cheam</div>
+    <div class="nbh-area">📍 Worcester Park</div>
+    <div class="nbh-area">📍 Belmont</div>
+    <div class="nbh-area">📍 Carshalton</div>
+    <div class="nbh-area">📍 Ewell</div>
+  </div>
+</div>
+
+<!-- ORDER SECTION -->
+<section class="full-order" id="order">
+  <div class="fo-text reveal">
+    <div class="s-eyebrow" style="font-size:.65rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--saffron);display:flex;align-items:center;gap:.7rem;margin-bottom:.7rem"><span style="content:'';width:18px;height:1px;background:var(--saffron);display:block"></span>Order tonight</div>
+    <div class="fo-title">Your adda<br>is <em>open.</em></div>
+    <p class="fo-desc">Seven days a week, from 11:30am. Delivering across Sutton and surrounding areas via all three major platforms — or WhatsApp us directly.</p>
+  </div>
+  <div class="fo-plats reveal">
+    <a href="https://deliveroo.co.uk/menu/london/sutton/mumbai-adda" target="_blank" rel="noopener" class="fo-plat p-roo">
+      <div class="fo-plat-l"><div class="fo-plat-ico">roo</div><div><div class="fo-plat-name">Deliveroo</div><div class="fo-plat-sub">Fast delivery across Sutton</div></div></div>
+      <div class="fo-plat-arr">→</div>
+    </a>
+    <a href="https://www.just-eat.co.uk/restaurants-mumbai-adda-sutton/menu" target="_blank" rel="noopener" class="fo-plat p-je">
+      <div class="fo-plat-l"><div class="fo-plat-ico">JE</div><div><div class="fo-plat-name">Just Eat</div><div class="fo-plat-sub">Order and track in real time</div></div></div>
+      <div class="fo-plat-arr">→</div>
+    </a>
+    <a href="https://www.ubereats.com/gb/store/mumbai-adda" target="_blank" rel="noopener" class="fo-plat p-ue">
+      <div class="fo-plat-l"><div class="fo-plat-ico">UE</div><div><div class="fo-plat-name">Uber Eats</div><div class="fo-plat-sub">Quick pickup and delivery</div></div></div>
+      <div class="fo-plat-arr">→</div>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-top">
+    <div>
+            <div class="ft-brand">
+        <svg class="ft-brand-svg" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M16 18 Q14 12 16 6"  fill="none" stroke="#F07818" stroke-width="2" stroke-linecap="round" opacity=".8"/>
+          <path d="M26 15 Q24 9  26 3"  fill="none" stroke="#F07818" stroke-width="2" stroke-linecap="round" opacity=".8"/>
+          <path d="M36 18 Q34 12 36 6"  fill="none" stroke="#F07818" stroke-width="2" stroke-linecap="round" opacity=".8"/>
+          <ellipse cx="26" cy="36" rx="20" ry="8" fill="none" stroke="#F07818" stroke-width="2.5"/>
+          <path d="M7 36 Q7 23 26 21 Q45 23 45 36" fill="#F07818" opacity=".15"/>
+          <path d="M7 36 Q7 23 26 21 Q45 23 45 36" fill="none" stroke="#F07818" stroke-width="2"/>
+          <line x1="12" y1="44" x2="40" y2="44" stroke="#F07818" stroke-width="1.5" opacity=".4"/>
+        </svg>
+        <div class="ft-brand-text">
+          <span class="ft-name">Mumbai Adda</span>
+          <span class="ft-sub">Sutton's Mumbai Kitchen</span>
+        </div>
+      </div>
+      <p class="ft-tagline">"Every bite tells a tale."<br>Authentic Mumbai street food &amp; Indo-Chinese,<br>made with love in Sutton, London.</p>
+
+            <div class="ft-soc">
+        <a href="https://www.instagram.com/mumbaiadda_london/" target="_blank" rel="noopener" title="Instagram">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/mumbaiaddalondon/" target="_blank" rel="noopener" title="Facebook">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+
+    </div>
+    <div class="ft-col">
+      <h4>Menu</h4>
+      <ul>
+        <li><a href="menu.html#bombay-bites">Bombay Bites</a></li>
+        <li><a href="menu.html#indo-chinese">Indo-Chinese</a></li>
+        <li><a href="menu.html#indian-mains">Indian Mains</a></li>
+        <li><a href="menu.html#wraps-rolls">Wraps & Rolls</a></li>
+        <li><a href="menu.html#saturday">Saturday Specials</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="our-story.html">Our Story</a></li>
+        <li><a href="menu.html">Full Menu</a></li>
+        <li><a href="index.html#order">Order Online</a></li>
+        <li><a href="find-us.html">Find Us</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h4>Order On</h4>
+      <ul>
+        <li><a href="https://deliveroo.co.uk/menu/london/sutton/mumbai-adda" target="_blank" rel="noopener">Deliveroo</a></li>
+        <li><a href="https://www.just-eat.co.uk/restaurants-mumbai-adda-sutton/menu" target="_blank" rel="noopener">Just Eat</a></li>
+        <li><a href="https://www.ubereats.com/gb/store/mumbai-adda" target="_blank" rel="noopener">Uber Eats</a></li>
+        <li><a href="https://wa.me/447887503324">WhatsApp</a></li>
+      </ul>
+      <h4 style="margin-top:1.5rem">Hours</h4>
+      <ul>
+        <li><a href="#">Mon–Thu: 11:30–21:00</a></li>
+        <li><a href="#">Fri–Sat: 11:30–22:00</a></li>
+        <li><a href="#">Sun: 11:30–21:00</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <p>© 2025 Mumbai Adda · 10 Station Parade, Brighton Road, Sutton SM2 5AD, London</p>
+    <p>Made with <span>🧡</span> for Blossom</p>
+  </div>
+</footer>
+
+<script>
+// Highlight today's hours
+const DAYS = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+const today = DAYS[new Date().getDay()];
+document.querySelectorAll('#hours-table tr').forEach(row => {
+  if (row.dataset.day === today) {
+    row.classList.add('today');
+    row.cells[0].innerHTML += `<span class="today-badge">Today</span>`;
+  }
+});
+
+// Reveal on scroll
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+}, { threshold:0.1 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+/* ── Nav scroll ── */
+const nav = document.getElementById('nav');
+const bar = document.getElementById('sticky-bar');
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  if (nav) nav.classList.toggle('scrolled', y > 60);
+  if (bar) bar.classList.toggle('visible', y > 200);
+}, { passive:true });
+
+/* ── Order dropdown ── */
+function toggleOrderDropdown(e) {
+  e.stopPropagation();
+  document.getElementById('nav-order-wrap').classList.toggle('open');
+}
+document.addEventListener('click', () => {
+  const w = document.getElementById('nav-order-wrap');
+  if (w) w.classList.remove('open');
+});
+const dd = document.getElementById('order-dropdown');
+if (dd) dd.addEventListener('click', e => e.stopPropagation());
+
+/* ── Theme toggle ── */
+function toggleTheme() {
+  const isLight = document.body.classList.toggle('light-mode');
+  const icon  = document.getElementById('tt-icon');
+  const label = document.getElementById('tt-label');
+  if (icon)  icon.textContent  = isLight ? '🌙' : '☀️';
+  if (label) label.textContent = isLight ? 'Dark' : 'Light';
+  try { localStorage.setItem('maTheme', isLight ? 'light' : 'dark'); } catch(e){}
+}
+(function(){
+  try {
+    if (localStorage.getItem('maTheme') === 'light') {
+      document.body.classList.add('light-mode');
+      const icon  = document.getElementById('tt-icon');
+      const label = document.getElementById('tt-label');
+      if (icon)  icon.textContent  = '🌙';
+      if (label) label.textContent = 'Dark';
+    }
+  } catch(e){}
+})();
+
+
+function toggleTheme() {
+  const isLight = document.body.classList.toggle('light-mode');
+  const icon  = document.getElementById('tt-icon');
+  const label = document.getElementById('tt-label');
+  icon.textContent  = isLight ? '🌙' : '☀️';
+  label.textContent = isLight ? 'Dark' : 'Light';
+  try { localStorage.setItem('maTheme', isLight ? 'light' : 'dark'); } catch(e){}
+}
+(function(){
+  try {
+    if (localStorage.getItem('maTheme') === 'light') {
+      document.body.classList.add('light-mode');
+      const icon  = document.getElementById('tt-icon');
+      const label = document.getElementById('tt-label');
+      if (icon)  icon.textContent  = '🌙';
+      if (label) label.textContent = 'Dark';
+    }
+  } catch(e){}
+})();
+
+function toggleTheme() {
+  const isLight = document.body.classList.toggle('light-mode');
+  const icon  = document.getElementById('tt-icon');
+  const label = document.getElementById('tt-label');
+  icon.textContent  = isLight ? '🌙' : '☀️';
+  label.textContent = isLight ? 'Dark' : 'Light';
+  try { localStorage.setItem('maTheme', isLight ? 'light' : 'dark'); } catch(e){}
+}
+(function(){
+  try {
+    if (localStorage.getItem('maTheme') === 'light') {
+      document.body.classList.add('light-mode');
+      const icon  = document.getElementById('tt-icon');
+      const label = document.getElementById('tt-label');
+      if (icon)  icon.textContent  = '🌙';
+      if (label) label.textContent = 'Dark';
+    }
+  } catch(e){}
+})();
+</script>
+</body>
+</html>

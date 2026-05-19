@@ -1,0 +1,2019 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Mumbai Adda Full Menu — Bombay Bites, Indo-Chinese, Indian Mains, Kathi Rolls, Biryani & more. Order on Deliveroo, Just Eat or Uber Eats in Sutton.">
+  <title>Menu — Mumbai Adda</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700;1,9..144,900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=Instrument+Serif:ital@0;1&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --saffron: #F07818;
+      --saffron-hot: #FF8C25;
+      --chilli: #C01808;
+      --turmeric: #D49010;
+      --gold: #F0C040;
+      --cream: #FBF4E6;
+      --parchment: #F0E4C8;
+      --dark: #160C04;
+      --dark2: #1E1008;
+      --espresso: #2C1508;
+      --mid: #583018;
+      --muted: #986848;
+      --border-dark: rgba(255, 255, 255, 0.08);
+      --border-cream: rgba(88, 48, 24, 0.12);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--dark);
+      color: #fff;
+      overflow-x: hidden
+    }
+
+    a {
+      text-decoration: none
+    }
+
+    /* ── NAV ── */
+
+
+
+
+
+
+
+
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      margin-top: 68px;
+      height: 280px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      padding: 0 3rem 2.5rem;
+    }
+
+    .page-hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=1600&q=85') center 40%/cover no-repeat;
+      filter: brightness(.28) saturate(1.2);
+    }
+
+    .page-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, var(--dark) 0%, transparent 65%)
+    }
+
+    .page-hero-text {
+      position: relative;
+      z-index: 2
+    }
+
+    .page-eyebrow {
+      font-size: .68rem;
+      font-weight: 600;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--saffron);
+      margin-bottom: .6rem;
+      display: flex;
+      align-items: center;
+      gap: .7rem
+    }
+
+    .page-eyebrow::before {
+      content: '';
+      width: 18px;
+      height: 1px;
+      background: var(--saffron)
+    }
+
+    .page-title {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 900;
+      letter-spacing: -.04em;
+      line-height: .9;
+      color: #fff
+    }
+
+    .page-title em {
+      color: var(--saffron);
+      font-style: italic;
+      font-weight: 300
+    }
+
+    .page-sub {
+      color: rgba(255, 255, 255, .4);
+      font-size: .92rem;
+      margin-top: .7rem
+    }
+
+    /* ── STICKY TABS ── */
+    .tabs-bar {
+      position: sticky;
+      top: 68px;
+      z-index: 100;
+      background: rgba(22, 12, 4, .97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-dark)
+    }
+
+    .tabs-inner {
+      display: flex;
+      overflow-x: auto;
+      padding: 0 3rem
+    }
+
+    .tabs-inner::-webkit-scrollbar {
+      display: none
+    }
+
+    .tab-btn {
+      display: flex;
+      align-items: center;
+      gap: .55rem;
+      padding: .95rem 1.5rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: .84rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, .35);
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: color .2s, border-color .2s
+    }
+
+    .tab-btn:hover {
+      color: rgba(255, 255, 255, .7)
+    }
+
+    .tab-btn.active {
+      color: var(--saffron);
+      border-bottom-color: var(--saffron)
+    }
+
+    .tab-count {
+      background: rgba(244, 130, 31, .12);
+      color: var(--saffron);
+      font-size: .62rem;
+      font-weight: 700;
+      padding: .12rem .42rem;
+      border-radius: 20px
+    }
+
+    /* ── ORDER BAR ── */
+    .order-bar {
+      background: var(--saffron);
+      padding: .75rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem
+    }
+
+    .order-bar-text {
+      font-family: 'Fraunces', serif;
+      font-size: .95rem;
+      font-weight: 700;
+      color: var(--dark);
+      font-style: italic
+    }
+
+    .order-bar-btns {
+      display: flex;
+      gap: .6rem
+    }
+
+    .ob-btn {
+      padding: .45rem 1.1rem;
+      font-size: .78rem;
+      font-weight: 700;
+      border-radius: 2px;
+      transition: all .2s
+    }
+
+    .ob-deliveroo {
+      background: #00CCBC;
+      color: #fff
+    }
+
+    .ob-deliveroo:hover {
+      background: #00b5a5
+    }
+
+    .ob-justeat {
+      background: #FF6600;
+      color: #fff
+    }
+
+    .ob-justeat:hover {
+      background: #e55a00
+    }
+
+    .ob-uber {
+      background: var(--dark);
+      color: #fff
+    }
+
+    .ob-uber:hover {
+      background: #333
+    }
+
+    .ob-wa {
+      background: #25D366;
+      color: #fff
+    }
+
+    .ob-wa:hover {
+      background: #1eb558
+    }
+
+    /* ── SECTION ── */
+    .menu-section {
+      padding: 4rem 3rem 2rem
+    }
+
+    .sec-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border-dark)
+    }
+
+    .sec-eyebrow {
+      font-size: .62rem;
+      font-weight: 700;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--saffron);
+      margin-bottom: .4rem;
+      display: flex;
+      align-items: center;
+      gap: .6rem
+    }
+
+    .sec-eyebrow::before {
+      content: '';
+      width: 14px;
+      height: 1px;
+      background: var(--saffron)
+    }
+
+    .sec-title {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 900;
+      letter-spacing: -.025em;
+      color: #fff;
+      line-height: 1
+    }
+
+    .sec-title em {
+      color: var(--saffron);
+      font-style: italic;
+      font-weight: 300
+    }
+
+    .sec-desc {
+      color: rgba(255, 255, 255, .3);
+      font-size: .84rem;
+      margin-top: .3rem
+    }
+
+    .sec-count {
+      font-size: .72rem;
+      color: rgba(255, 255, 255, .2);
+      white-space: nowrap
+    }
+
+    /* ── DISH GRID ── */
+    .dish-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(255, 255, 255, .04)
+    }
+
+    .dish-row {
+      background: var(--dark2);
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      transition: background .25s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dish-row:hover {
+      background: #261508
+    }
+
+    .dish-row::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--saffron);
+      transform: scaleY(0);
+      transition: transform .3s;
+      transform-origin: bottom
+    }
+
+    .dish-row:hover::before {
+      transform: scaleY(1)
+    }
+
+    /* dish photo */
+    .dish-photo {
+      width: 100px;
+      height: 100px;
+      flex-shrink: 0;
+      /* ═══════════════════════════════════════════════════
+     PHOTO SWAP GUIDE:
+     Replace the URL below with: url('images/dish-name.jpg')
+     when Blossom provides real food photos.
+     Example: background:url('images/butter-chicken.jpg') center/cover no-repeat;
+  ═══════════════════════════════════════════════════ */
+      background: var(--espresso) center/cover no-repeat;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dish-photo::after {
+      content: '📷';
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      opacity: .2;
+      background: rgba(22, 12, 4, .3)
+    }
+
+    .dish-photo.has-photo::after {
+      display: none
+    }
+
+    .dish-info {
+      padding: .9rem 1rem
+    }
+
+    .dish-badge-row {
+      display: flex;
+      gap: .4rem;
+      margin-bottom: .35rem;
+      flex-wrap: wrap
+    }
+
+    .badge {
+      font-size: .58rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: .15rem .5rem;
+      border-radius: 2px
+    }
+
+    .badge-veg {
+      background: rgba(40, 160, 40, .15);
+      color: #5DC85D;
+      border: 1px solid rgba(40, 160, 40, .2)
+    }
+
+    .badge-hot {
+      background: rgba(192, 24, 8, .15);
+      color: #F07070;
+      border: 1px solid rgba(192, 24, 8, .2)
+    }
+
+    .badge-popular {
+      background: rgba(212, 144, 16, .15);
+      color: var(--turmeric);
+      border: 1px solid rgba(212, 144, 16, .2)
+    }
+
+    .badge-new {
+      background: rgba(240, 120, 24, .15);
+      color: var(--saffron);
+      border: 1px solid rgba(240, 120, 24, .2)
+    }
+
+    .badge-sat {
+      background: rgba(192, 24, 8, .2);
+      color: #F07070;
+      border: 1px solid rgba(192, 24, 8, .3)
+    }
+
+    .dish-name {
+      font-family: 'Fraunces', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -.01em;
+      line-height: 1.2;
+      margin-bottom: .25rem
+    }
+
+    .dish-desc {
+      color: rgba(255, 255, 255, .35);
+      font-size: .76rem;
+      line-height: 1.5;
+      font-weight: 300
+    }
+
+    .dish-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: .6rem
+    }
+
+    .dish-price {
+      font-family: 'Fraunces', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--gold)
+    }
+
+    .dish-variants {
+      font-size: .7rem;
+      color: rgba(255, 255, 255, .25);
+      font-style: italic
+    }
+
+    .dish-order {
+      opacity: 0;
+      background: var(--saffron);
+      color: var(--dark);
+      font-size: .65rem;
+      font-weight: 700;
+      padding: .3rem .7rem;
+      border-radius: 2px;
+      transition: opacity .2s
+    }
+
+    .dish-row:hover .dish-order {
+      opacity: 1
+    }
+
+    /* ── SATURDAY BAND ── */
+    .sat-band {
+      margin: 0 3rem 3rem;
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+      background: url('https://images.unsplash.com/photo-1606491956689-2ea866880c84?auto=format&fit=crop&w=1200&q=85') center/cover no-repeat;
+    }
+
+    .sat-band::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(180, 8, 4, .95) 0%, rgba(100, 4, 2, .88) 100%)
+    }
+
+    .sat-band-inner {
+      position: relative;
+      z-index: 2;
+      padding: 2.5rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap
+    }
+
+    .sat-band h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: -.025em
+    }
+
+    .sat-band h3 em {
+      font-style: italic;
+      font-weight: 300
+    }
+
+    .sat-band p {
+      color: rgba(255, 255, 255, .6);
+      font-size: .88rem;
+      margin-top: .3rem
+    }
+
+    .sat-items {
+      display: flex;
+      gap: .8rem;
+      flex-wrap: wrap
+    }
+
+    .sat-item {
+      background: rgba(255, 255, 255, .1);
+      border: 1px solid rgba(255, 255, 255, .15);
+      color: #fff;
+      font-size: .84rem;
+      padding: .5rem 1.1rem;
+      border-radius: 30px;
+      display: flex;
+      gap: .5rem;
+      align-items: center
+    }
+
+    .sat-item strong {
+      color: var(--gold);
+      font-family: 'Fraunces', serif
+    }
+
+    .sat-cta-btn {
+      background: #fff;
+      color: var(--chilli);
+      padding: .85rem 1.8rem;
+      font-size: .88rem;
+      font-weight: 700;
+      border-radius: 2px;
+      white-space: nowrap;
+      transition: all .2s
+    }
+
+    .sat-cta-btn:hover {
+      background: var(--gold);
+      transform: translateY(-2px)
+    }
+
+    /* ── STICKY BOTTOM ORDER ── */
+    #order-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 300;
+      background: rgba(22, 12, 4, .97);
+      backdrop-filter: blur(20px);
+      border-top: 1px solid rgba(240, 120, 24, .2);
+      padding: .85rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem
+    }
+
+    .of-text {
+      font-family: 'Fraunces', serif;
+      font-size: .95rem;
+      font-weight: 700;
+      color: #fff
+    }
+
+    .of-text span {
+      color: var(--saffron);
+      font-style: italic;
+      font-weight: 300
+    }
+
+    .of-btns {
+      display: flex;
+      gap: .6rem
+    }
+
+    .of-btn {
+      padding: .55rem 1.2rem;
+      font-size: .8rem;
+      font-weight: 700;
+      border-radius: 2px;
+      transition: all .2s
+    }
+
+    /* ── WHATSAPP ── */
+    #wa-btn {
+      position: fixed;
+      right: 2rem;
+      bottom: 4.5rem;
+      z-index: 350;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, .4);
+      transition: transform .2s
+    }
+
+    #wa-btn:hover {
+      transform: scale(1.1)
+    }
+
+    /* ── FOOTER ── */
+    .mini-footer {
+      background: var(--dark);
+      border-top: 1px solid var(--border-dark);
+      padding: 2rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 56px
+    }
+
+    .mf-logo {
+      font-family: 'Fraunces', serif;
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: #fff
+    }
+
+    .mf-logo em {
+      color: var(--saffron);
+      font-style: italic;
+      font-weight: 300
+    }
+
+    .mf-links {
+      display: flex;
+      gap: 1.5rem
+    }
+
+    .mf-links a {
+      color: rgba(255, 255, 255, .3);
+      font-size: .84rem;
+      transition: color .2s
+    }
+
+    .mf-links a:hover {
+      color: var(--saffron)
+    }
+
+    .mf-copy {
+      color: rgba(255, 255, 255, .15);
+      font-size: .76rem
+    }
+
+    /* ── REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .6s ease, transform .6s ease
+    }
+
+    .reveal.in {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:1024px) {
+      .dish-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+
+    @media(max-width:768px) {
+
+
+
+      .page-hero {
+        padding: 0 1.2rem 2rem;
+        height: 220px
+      }
+
+      .page-title {
+        font-size: clamp(2rem, 9vw, 3rem)
+      }
+
+      .tabs-inner {
+        padding: 0 1rem
+      }
+
+      .tab-btn {
+        padding: .85rem 1rem;
+        font-size: .78rem
+      }
+
+      .order-bar {
+        padding: .65rem 1.2rem;
+        flex-wrap: wrap
+      }
+
+      .order-bar-btns {
+        gap: .4rem
+      }
+
+      .ob-btn {
+        padding: .4rem .9rem;
+        font-size: .72rem
+      }
+
+      .menu-section {
+        padding: 2.5rem 1.2rem 1rem
+      }
+
+      .sec-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: .5rem
+      }
+
+      .dish-grid {
+        grid-template-columns: 1fr
+      }
+
+      .dish-row {
+        grid-template-columns: 85px 1fr
+      }
+
+      .dish-photo {
+        width: 85px;
+        height: 85px
+      }
+
+      .dish-name {
+        font-size: .92rem
+      }
+
+      .dish-order {
+        opacity: 1
+      }
+
+      .sat-band {
+        margin: 0 1.2rem 2rem
+      }
+
+      .sat-band-inner {
+        padding: 2rem 1.5rem;
+        flex-direction: column;
+        align-items: flex-start
+      }
+
+      .sat-band h3 {
+        font-size: 1.4rem
+      }
+
+      #order-footer {
+        padding: .75rem 1.2rem
+      }
+
+      .of-text {
+        font-size: .82rem
+      }
+
+      .of-btns {
+        gap: .4rem
+      }
+
+      .of-btn {
+        padding: .45rem .9rem;
+        font-size: .72rem
+      }
+
+      #wa-btn {
+        right: 1rem;
+        bottom: 4rem;
+        width: 46px;
+        height: 46px;
+        font-size: 1.2rem
+      }
+
+      .mini-footer {
+        padding: 1.5rem 1.2rem;
+        margin-bottom: 52px
+      }
+
+      .mf-links {
+        gap: 1rem
+      }
+    }
+
+    body.light-mode {
+      background: var(--cream);
+      color: var(--dark);
+    }
+
+    body.light-mode nav {
+      background: rgba(253, 246, 230, .97) !important;
+      border-bottom-color: rgba(88, 48, 24, .12) !important;
+    }
+
+    body.light-mode .tabs-bar {
+      background: rgba(253, 246, 230, .97);
+      border-bottom-color: rgba(88, 48, 24, .12);
+    }
+
+    body.light-mode .tab-btn {
+      color: rgba(60, 22, 8, .4);
+    }
+
+    body.light-mode .tab-btn.active {
+      color: var(--chilli);
+      border-bottom-color: var(--chilli);
+    }
+
+    body.light-mode .tab-count {
+      background: rgba(192, 24, 8, .1);
+      color: var(--chilli);
+    }
+
+    body.light-mode .menu-section {
+      background: var(--cream);
+    }
+
+    body.light-mode .sec-title {
+      color: var(--dark);
+    }
+
+    body.light-mode .sec-desc {
+      color: var(--muted);
+    }
+
+    body.light-mode .dish-grid {
+      background: rgba(88, 48, 24, .08);
+    }
+
+    body.light-mode .dish-row {
+      background: var(--parchment);
+    }
+
+    body.light-mode .dish-row:hover {
+      background: #EFE0C0;
+    }
+
+    body.light-mode .dish-name {
+      color: var(--dark);
+    }
+
+    body.light-mode .dish-desc {
+      color: var(--muted);
+    }
+
+    body.light-mode .dish-price {
+      color: var(--chilli);
+    }
+
+    body.light-mode .sec-count {
+      color: rgba(60, 22, 8, .3);
+    }
+
+    body.light-mode .mini-footer {
+      background: var(--parchment);
+      border-top-color: rgba(88, 48, 24, .12);
+    }
+
+    body.light-mode .mf-logo {
+      color: var(--dark);
+    }
+
+    body.light-mode .mf-links a {
+      color: rgba(60, 22, 8, .4);
+    }
+
+    body.light-mode .mf-copy {
+      color: rgba(60, 22, 8, .2);
+    }
+
+    body.light-mode #order-footer {
+      background: rgba(253, 246, 230, .97);
+      border-top-color: rgba(88, 48, 24, .12);
+    }
+
+    body.light-mode .of-text {
+      color: var(--dark);
+    }
+
+    /* ── THEME TOGGLE ── */
+    #theme-toggle {
+      position: fixed;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      z-index: 450;
+      background: var(--espresso);
+      border: 1px solid rgba(255, 255, 255, .12);
+      border-right: none;
+      border-radius: 8px 0 0 8px;
+      padding: .6rem .5rem;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .35rem;
+      transition: background .3s, border-color .3s;
+      box-shadow: -4px 0 20px rgba(0, 0, 0, .3);
+    }
+
+    #theme-toggle:hover {
+      background: var(--mid);
+    }
+
+    #theme-toggle .tt-icon {
+      font-size: 1rem;
+      line-height: 1;
+    }
+
+    #theme-toggle .tt-label {
+      font-size: .52rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .45);
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+    }
+
+    body.light-mode #theme-toggle {
+      background: var(--parchment);
+      border-color: rgba(88, 48, 24, .2);
+    }
+
+    body.light-mode #theme-toggle .tt-label {
+      color: rgba(60, 22, 8, .45);
+    }
+
+    body.light-mode #theme-toggle:hover {
+      background: var(--cream);
+    }
+
+    /* ══ UNIVERSAL NAV ══ */
+    #site-nav,
+    nav.site-nav,
+    nav:not([class]) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 400;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 3rem;
+      height: 68px;
+      background: rgba(22, 12, 4, .97);
+      backdrop-filter: blur(24px);
+      border-bottom: 1px solid rgba(255, 255, 255, .08);
+      transition: background .3s, box-shadow .3s;
+    }
+
+    nav.scrolled {
+      box-shadow: 0 4px 30px rgba(0, 0, 0, .4);
+    }
+
+    .nav-logo {
+      font-family: 'Fraunces', serif;
+      font-size: 1.55rem;
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: -.025em;
+      text-decoration: none;
+      flex-shrink: 0;
+      transition: color .2s;
+    }
+
+    .nav-logo em {
+      color: var(--saffron);
+      font-style: italic;
+      font-weight: 300;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: rgba(255, 255, 255, .5);
+      font-size: .84rem;
+      font-weight: 500;
+      letter-spacing: .01em;
+      transition: color .2s;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--saffron);
+    }
+
+    .nav-cta {
+      background: var(--saffron);
+      color: var(--dark);
+      padding: .62rem 1.6rem;
+      font-size: .84rem;
+      font-weight: 700;
+      border-radius: 2px;
+      transition: all .2s;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .nav-cta:hover {
+      background: var(--saffron-hot);
+      transform: translateY(-1px);
+    }
+
+    /* light mode */
+    body.light-mode nav:not([class]),
+    body.light-mode #site-nav,
+    body.light-mode nav.site-nav {
+      background: rgba(253, 246, 230, .97);
+      border-bottom-color: rgba(88, 48, 24, .12);
+    }
+
+    body.light-mode .nav-logo {
+      color: var(--dark);
+    }
+
+    body.light-mode .nav-links a {
+      color: rgba(60, 22, 8, .5);
+    }
+
+    body.light-mode .nav-links a:hover,
+    body.light-mode .nav-links a.active {
+      color: var(--chilli);
+    }
+
+    /* mobile */
+    @media(max-width:768px) {
+
+      #site-nav,
+      nav:not([class]),
+      nav.site-nav {
+        padding: 0 1.2rem;
+        height: 60px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .nav-logo {
+        font-size: 1.25rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+
+  <!-- ══ THEME TOGGLE ══ -->
+  <button id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark/light mode">
+    <span class="tt-icon" id="tt-icon">☀️</span>
+    <span class="tt-label" id="tt-label">Light</span>
+  </button>
+  <nav>
+    <a href="index.html" class="nav-logo">Mumbai<em>Adda</em></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html" class="active">Menu</a></li>
+      <li><a href="our-story.html">Our Story</a></li>
+      <li><a href="find-us.html">Find Us</a></li>
+    </ul>
+    <a href="#order-footer" class="nav-cta">Order Now →</a>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-text">
+      <div class="page-eyebrow">Mumbai Adda · Sutton</div>
+      <h1 class="page-title">The Full <em>Menu</em></h1>
+      <p class="page-sub">Every dish made fresh. Order on Deliveroo, Just Eat, Uber Eats or WhatsApp.</p>
+    </div>
+  </div>
+
+  <!-- STICKY TABS -->
+  <div class="tabs-bar">
+    <div class="tabs-inner" id="tabs">
+      <button class="tab-btn active" onclick="goTo('bombay-bites',this)">🌶 Bombay Bites <span
+          class="tab-count">8</span></button>
+      <button class="tab-btn" onclick="goTo('indo-chinese',this)">🍜 Indo-Chinese <span
+          class="tab-count">10</span></button>
+      <button class="tab-btn" onclick="goTo('indian-mains',this)">🍛 Indian Mains <span
+          class="tab-count">8</span></button>
+      <button class="tab-btn" onclick="goTo('wraps-rolls',this)">🫓 Wraps & Rolls <span
+          class="tab-count">5</span></button>
+      <button class="tab-btn" onclick="goTo('loaded-fries',this)">🍟 Loaded Fries <span
+          class="tab-count">3</span></button>
+      <button class="tab-btn" onclick="goTo('saturday',this)">🎉 Sat Specials <span class="tab-count">3</span></button>
+      <button class="tab-btn" onclick="goTo('rice-breads',this)">🍚 Rice & Breads <span
+          class="tab-count">8</span></button>
+      <button class="tab-btn" onclick="goTo('drinks',this)">🫖 Drinks <span class="tab-count">3</span></button>
+    </div>
+  </div>
+
+  <!-- ORDER BAR -->
+  <div class="order-bar">
+    <div class="order-bar-text">Ready to order? Choose your platform →</div>
+    <div class="order-bar-btns">
+      <a href="https://deliveroo.co.uk/menu/london/sutton/mumbai-adda" target="_blank" rel="noopener"
+        class="ob-btn ob-deliveroo">🛵 Deliveroo</a>
+      <a href="https://www.just-eat.co.uk/restaurants-mumbai-adda-sutton/menu" target="_blank" rel="noopener"
+        class="ob-btn ob-justeat">🍽 Just Eat</a>
+      <a href="https://www.ubereats.com/gb/store/mumbai-adda" target="_blank" rel="noopener" class="ob-btn ob-uber">🚗
+        Uber Eats</a>
+      <a href="https://wa.me/447887503324?text=Hi!%20I'd%20like%20to%20order%20please%20🍛" class="ob-btn ob-wa"
+        target="_blank">💬 WhatsApp</a>
+    </div>
+  </div>
+
+  <!-- ══════════ BOMBAY BITES ══════════ -->
+  <section class="menu-section reveal" id="bombay-bites">
+    <div class="sec-header">
+      <div>
+        <div class="sec-eyebrow">Starters</div>
+        <h2 class="sec-title">Bombay <em>Bites</em></h2>
+        <p class="sec-desc">Mumbai's street snacks, made the way they should be</p>
+      </div>
+      <div class="sec-count">8 dishes</div>
+    </div>
+    <div class="dish-grid">
+
+      <div class="dish-row">
+        <!-- PHOTO: replace with url('images/vada-pav.jpg') -->
+        <div class="dish-photo" style="background-image:url('menu-icons/Vada Pav.jpg');" class="has-photo"></div>
+        <div class="dish-info">
+          <div class="dish-badge-row"><span class="badge badge-popular">Most Loved</span><span
+              class="badge badge-veg">Veg</span></div>
+          <div class="dish-name">Vada Pav</div>
+          <div class="dish-desc">Mumbai's original street burger — spiced potato patty in a soft bun with green chutney
+            and garlic powder</div>
+          <div class="dish-footer">
+            <div class="dish-price">£2.99</div><a href="#order-footer" class="dish-order">Order →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dish-row">
+        <div class="dish-photo has-photo" style="background-image:url('menu-icons/Samosa.jpg');"></div>
+        <div class="dish-info">
+          <div class="dish-badge-row"><span class="badge badge-veg">Veg</span></div>
+          <div class="dish-name">Samosa</div>
+          <div class="dish-desc">Deep-fried golden pastry with spiced potato and pea filling. Crispy outside, soft
+            inside</div>
+          <div class="dish-footer">
+            <div class="dish-price">£1.50</div><a href="#order-footer" class="dish-order">Order →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dish-row">
+        <div class="dish-photo has-photo" style="background-image:url('menu-icons/Honey Chilli Potato.png');"></div>
+        <div class="dish-info">
+          <div class="dish-badge-row"><span class="badge badge-popular">Fan Fave</span><span
+              class="badge badge-veg">Veg</span></div>
+          <div class="dish-name">Honey Chilli Potato</div>
+          <div class="dish-desc">Crispy fried potatoes tossed in a sticky honey-chilli glaze with sesame seeds</div>
+          <div class="dish-footer">
+            <div class="dish-price">£5.99</div><a href="#order-footer" class="dish-order">Order →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dish-row">
+        <div class="dish-photo has-photo" style="background-image:url('menu-icons/Veg Spring Roll.jpg');"></div>
+        <div class="dish-info">
+          <div class="dish-badge-row"><span class="badge badge-veg">Veg</span></div>
+          <div class="dish-name">Veg Spring Roll (2 pcs)</div>
+          <div class="dish-desc">Crispy golden rolls stuffed with seasoned mixed vegetables</div>
+          <div class="dish-footer">
+            <div class="dish-price">£2.49</div><a href="#order-footer" class="dish-order">Order →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dish-row">
+        <div class="dish-photo has-photo" style="background-image:url('menu-icons/Cheese Balls.jpg');"></div>
+        <div class="dish-info">
+          <div class="dish-badge-row"><span class="badge badge-veg">Veg</span></div>
+          <div class="dish-name">Cheese Balls (2 pcs)</div>
+          <div class="dish-desc">Crispy fried balls with a melting cheese centre. Simple, indulgent perfection</div>
+          <div class="dish-footer">
+            <div class="dish-price">£1.69</div><a href="#order-footer" class="dish-order">Order →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dish-row">
+        <div class="dish-photo has-photo" style="background-image:url('menu-icons/Chicken Lollipop.jpg');"></div>
+        <div class="dish-info">
+          <div class="dish-badge-row"><span class="badge badge-popular">Party Starter</span></div>
+          <div class="dish-name">Chicken Lollipop (6 pcs)</div>
+          <div class="dish-desc">Crispy fried chicken lollipops marinated in bold Indo-Chinese spices</div>
+          <div class="dish-footer">
+            <div class="dish-price">£9.99</div><a href="#order-footer" class="dish-order">Order →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dish-row">
+        <div class="dish-photo has-photo" style="background-image:url('menu-icons/Schezwan Chicken Lollipop.jpg');">
+        </div>
+        <div class="dish-info">
+          <div class="dish-badge-row"><span class="badge badge-hot">🔥 Spicy</span></div>
+          <div class="dish-name">Schezwan Chicken Lollipop (6 pcs)</div>
+          <div class="dish-desc">Classic lollipop tossed in fiery Schezwan sauce. Not for the faint-hearted</div>
+          <div class="dish-footer">
+            <div class="dish-price">£11.99</div><a href="#order-footer" class="dish-order">Order →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dish-row">
+        <div class="dish-photo has-photo" style="background-image:url('menu-icons/Chicken 65 Fry.jpg');"></div>
+        <div class="dish-info">
+          <div class="dish-badge-row"><span class="badge badge-hot">🔥 Spicy</span></div>
+          <div class="dish-name">Chicken 65 Fry</div>
+          <div class="dish-desc">Deep-fried spiced chicken with a bold kick of chilli. A South Indian street food legend
+          </div>
+          <div class="dish-footer">
+            <div class="dish-price">£6.99</div><a href="#order-footer" class="dish-order">Order →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════ INDO-CHINESE ══════════ -->
+  <section class="menu-section reveal" id="indo-chinese">
+    <div class="sec-header">
+      <div>
+        <div class="sec-eyebrow">Indo-Chinese</div>
+        <h2 class="sec-title">Wok-fired <em>Magic</em></h2>
+        <p class="sec-desc">India meets China in one fiery wok — Mumbai's beloved fusion</p>
+      </div>
+      <div class="sec-count">10 dishes</div>
+    </div>
+    <div class="dish-grid">
+
+      <div class="dish-row">
+        <div class="dish-photo has-photo" style="background-image:url('menu-icons/Schezwan Noodles.jpg');"></div>
+        <div class="dish-info">
+          <div class="dish-badge-row"><span class="badge badge-popular">Best Seller</span><span
+              class="badge badge-hot">🔥 Spicy</span></div>
+          <div class="dish-name">Schezwan Noodles</div>
+          <div class="dish-desc">Wok-tossed noodles in a fiery Schezwan sauce</div>
+          <div class="dish-footer">
+            <div>
+              <div class="dish-price">From £7.99</div>
+              <div class="dish-variants">Veg £7.99 · Egg £8.99 · Chicken £9.99</div>
+            </div><a href="#order-footer" class="dish-order">Order →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dish-row">
+        <div class="dish-photo has-photo" style="background-image:url('menu-icons/Hakka Noodles.jpg');"></div>
+        <div class="dish-info">
+          <div class="dish-badge-row"><span class="badge badge-popular">Classic</span></div>
+          <div class="dish-name">Hakka Noodles</div>
+          <div class="dish-desc">Classic stir-fried noodles with soy and crisp vegetables</div>
+          <div class="dish-footer">
+            <div>
+              <div class="dish-price">From £6.99</div>
+              <div class="dish-variants">Veg £6.99 · Egg £7.99 · Chicken £8.99</div>
+            </div><a href="#order-footer" class="dish-order">Order →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dish-row">
+        <div class="dish-photo has-photo" style="background-image:url('menu-icons/Schezwan Fried Rice.jpg');"></div>
+        <div class="dish-info">
+          <div class="dish-badge-row"><span class="badge badge-hot">🔥 Spicy</span></div>
+          <div class="dish-name">Schezwan Fried Rice</div>
+          <div class="dish-desc">Spicy wok-fried rice in Schezwan sauce</div>
+          <div class="dish-footer">
+            <div>
+              <div class="dish-price">From £6.99</div>
+              <div class="dish-variants">Veg £6.99 · Egg £7.99 · Chicken £8.99</div>
+            </div><a href="#order-footer" class="dish-order">Order →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dish-row">
+        <div class="dish-photo has-photo" style="background-image:url('menu-icons/Fried Rice.jpg');"></div>
+        <div class="dish-info">
+          <div class="dish-badge-row"></div>
+          <div class="dish-name">Fried Rice</div>
+          <div class="dish-desc">Classic stir-fried rice, clean and aromatic</div>
+          <div class="dish-footer">
+            <div>
+              <div class="dish-price">From £5.99</div>
+              <div class="dish-variants">Veg £5.99 · Egg £6.99 · Chicken £7.99</div>
+            </div><a href="#order-footer" class="dish-order">Order →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dish-row">
+        <div class="dish-photo has-photo" style="background-image:url('menu-icons/Chicken Chilly.jpg');"></div>
+        <div class="dish-info">
+          <div class="dish-badge-row"><span class="badge badge-hot">🔥 Spicy</span></div>
+          <div class="dish-name">Chicken Chilly</div>
+          <div class="dish-desc">Chicken with green chilli and capsicum in a punchy sauce</div>
+          <div class="dish-footer">
+            <div>
+              <div class="dish-price">See menu</div>
+              <div class="dish-variants">Available Dry or Gravy</div>
+            </div><a href="#order-footer" class="dish-order">Order →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dish-row">
+        <div class="dish-photo has-photo" style="background-image:url('menu-icons/Schezwan Chicken.jpg');"></div>
+        <div class="dish-info">
+          <div class="dish-badge-row"><span class="badge badge-hot">🔥 Spicy</span></div>
+          <div class="dish-name">Schezwan Chicken</div>
+          <div class="dish-desc">Bold wok-tossed chicken in vibrant Schezwan sauce</div>
+          <div class="dish-footer">
+            <div>
+              <div class="dish-price">See menu</div>
+              <div class="dish-variants">Available Dry or Gravy</div>
+            </div><a href="#order-footer" class="dish-order">Order →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dish-row">
+        <div class="dish-photo has-photo" style="background-image:url('menu-icons/Veg Manchurian.jpg');"></div>
+        <div class="dish-info">
+          <div class="dish-badge-row"><span class="badge badge-veg">Veg</span></div>
+          <div class="dish-name">Veg Manchurian</div>
+          <div class="dish-desc">Crispy fried vegetable dumplings in a tangy Manchurian sauce</div>
+          <div class="dish-footer">
+            <div>
+              <div class="dish-price">See menu</div>
+              <div class="dish-variants">Available Dry or Gravy</div>
+            </div><a href="#order-footer" class="dish-order">Order →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dish-row">
+        <div class="dish-photo has-photo" style="background-image:url('menu-icons/Kung Pao Chicken.jpg');"></div>
+        <div class="dish-info">
+          <div class="dish-badge-row"></div>
+          <div class="dish-name">Kung Pao Chicken</div>
+          <div class="dish-desc">Stir-fried chicken with peanuts, dried chilli and classic Kung Pao sauce</div>
+          <div class="dish-footer">
+            <div class="dish-price">£8.99</div><a href="#order-footer" class="dish-order">Order →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dish-row">
+        <div class="dish-photo has-photo" style="background-image:url('menu-icons/Chilli Paneer.jpg');"></div>
+        <div class="dish-info">
+          <div class="dish-badge-row"><span class="badge badge-veg">Veg</span><span class="badge badge-hot">🔥
+              Spicy</span></div>
+          <div class="dish-name">Chilli Paneer</div>
+          <div class="dish-desc">Crispy paneer tossed with green chilli, peppers and a tangy sauce</div>
+          <div class="dish-footer">
+            <div>
+              <div class="dish-price">£8.99</div>
+              <div class="dish-variants">Available Dry or Gravy</div>
+            </div><a href="#order-footer" class="dish-order">Order →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dish-row">
+        <div class="dish-photo" style="background-image:url('Paneer Chilly Noodles.jpg');"></div>
+        <div class="dish-info">
+          <div class="dish-badge-row"><span class="badge badge-veg">Veg</span></div>
+          <div class="dish-name">Paneer Chilly Noodles</div>
+          <div class="dish-desc">Hakka noodles tossed with spiced paneer and peppers</div>
+          <div class="dish-footer">
+            <div class="dish-price">£8.99</div><a href="#order-footer" class="dish-order">Order →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════ INDIAN MAINS ══════════ -->
+  <section class="menu-section reveal" id="indian-mains">
+    <div class="sec-header">
+      <div>
+        <div class="sec-eyebrow">Indian Mains</div>
+        <h2 class="sec-title">Rich <em>Curries</em></h2>
+        <p class="sec-desc">Slow-cooked, soul-warming Indian classics. Best with Laccha Paratha or Jeera Rice.</p>
+      </div>
+      <div class="sec-count">8 dishes</div>
+    </div>
+    <div class="dish-grid">
+
+      <div class="dish-row">
+        <div class="dish-photo has-photo" style="background-image:url('menu-icons/Butter Chicken.jpg');"></div>
+        <div class="dish-info">
+          <div class="dish-badge-row"><span class="badge badge-popular">Most Ordered</span></div>
+          <div class="dish-name">Butter Chicken</div>
+          <div class="dish-desc">Tender chicken in a velvety, aromatic tomato and cream sauce. The dish that started it
+            all.</div>
+          <div class="dish-footer">
+            <div class="dish-price">£8.99</div><a href="#order-footer" class="dish-order">Order →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dish-row">
+        <div class="dish-photo has-photo" style="background-image:url('menu-icons/Mumbai Chicken Curry.jpg');"></div>
+        <div class="dish-info">
+          <div class="dish-badge-row"><span class="badge badge-popular">House Special</span></div>
+          <div class="dish-name">Mumbai Chicken Curry</div>
+          <div class="dish-desc">Traditional Mumbai-style chicken curry with bold, spiced gravy</div>
+          <div class="dish-footer">
+            <div class="dish-price">£7.99</div><a href="#order-footer" class="dish-order">Order →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dish-row">
+        <div class="dish-photo has-photo" style="background-image:url('menu-icons/Kadai Chicken.jpg');"></div>
+        <div class="dish-info">
+          <div class="dish-badge-row"></div>
+          <div class="dish-name">Kadai Chicken</div>
+          <div class="dish-desc">Chicken cooked in a kadai with capsicum, onion and whole spices. Rustic and hearty.
+          </div>
+          <div class="dish-footer">
+            <div class="dish-price">£8.99</div><a href="#order-footer" class="dish-order">Order →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dish-row">
+        <div class="dish-photo has-photo" style="background-image:url('menu-icons/Paneer Makhani.jpg');"></div>
+        <div class="dish-info">
+          <div class="dish-badge-row"><span class="badge badge-veg">Veg</span></div>
+          <div class="dish-name">Paneer Makhani</div>
+          <div class="dish-desc">Soft paneer cubes in a rich, buttery tomato makhani sauce</div>
+          <div class="dish-footer">
+            <div class="dish-price">£8.99</div><a href="#order-footer" class="dish-order">Order →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dish-row">
+        <div class="dish-photo has-photo" style="background-image:url('menu-icons/Paneer Kadai.jpg');"></div>
+        <div class="dish-info">
+          <div class="dish-badge-row"><span class="badge badge-veg">Veg</span></div>
+          <div class="dish-name">Paneer Kadai</div>
+          <div class="dish-desc">Paneer with capsicum and tomato in a bold kadai masala</div>
+          <div class="dish-footer">
+            <div class="dish-price">£8.99</div><a href="#order-footer" class="dish-order">Order →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dish-row">
+        <div class="dish-photo has-photo" style="background-image:url('menu-icons/Mix Veg Angara.jpg');"></div>
+        <div class="dish-info">
+          <div class="dish-badge-row"><span class="badge badge-veg">Veg</span><span class="badge badge-hot">🔥
+              Spicy</span></div>
+          <div class="dish-name">Mix Veg Angara</div>
+          <div class="dish-desc">Smoky, fiery mixed vegetable curry with the signature angara charred flavour</div>
+          <div class="dish-footer">
+            <div class="dish-price">£8.99</div><a href="#order-footer" class="dish-order">Order →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dish-row">
+        <div class="dish-photo has-photo" style="background-image:url('menu-icons/Mutton Masala.png');"></div>
+        <div class="dish-info">
+          <div class="dish-badge-row"><span class="badge badge-new">Premium</span></div>
+          <div class="dish-name">Mutton Masala</div>
+          <div class="dish-desc">Slow-cooked tender mutton in a deep, spiced masala gravy. Rich and worth every penny.
+          </div>
+          <div class="dish-footer">
+            <div class="dish-price">£10.99</div><a href="#order-footer" class="dish-order">Order →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dish-row">
+        <div class="dish-photo has-photo" style="background-image:url('menu-icons/Dal Tadka.webp');"></div>
+        <div class="dish-info">
+          <div class="dish-badge-row"><span class="badge badge-veg">Veg</span></div>
+          <div class="dish-name">Dal Tadka</div>
+          <div class="dish-desc">Yellow lentils tempered with cumin, garlic and dried red chilli. Simple and deeply
+            satisfying.</div>
+          <div class="dish-footer">
+            <div class="dish-price">£4.99</div><a href="#order-footer" class="dish-order">Order →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════ WRAPS & ROLLS ══════════ -->
+  <section class="menu-section reveal" id="wraps-rolls">
+    <div class="sec-header">
+      <div>
+        <div class="sec-eyebrow">Wraps & Rolls</div>
+        <h2 class="sec-title">Kathi <em>Rolls</em></h2>
+        <p class="sec-desc">Mumbai's ultimate on-the-go eat — flaky paratha, bold fillings</p>
+      </div>
+      <div class="sec-count">5 dishes</div>
+    </div>
+    <div class="dish-grid">
+
+      <div class="dish-row">
+        <div class="dish-photo has-photo" style="background-image:url('menu-icons/Chicken Kathi Roll.jpg');"></div>
+        <div class="dish-info">
+          <div class="dish-badge-row"><span class="badge badge-popular">Top Pick</span></div>
+          <div class="dish-name">Chicken Kathi Roll</div>
+          <div class="dish-desc">Flaky buttery paratha wrapped around spiced chicken with onions, fresh chutney and lime
+          </div>
+          <div class="dish-footer">
+            <div class="dish-price">£6.99</div><a href="#order-footer" class="dish-order">Order →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dish-row">
+        <div class="dish-photo has-photo" style="background-image:url('menu-icons/Schezwan Chicken Roll.png');"></div>
+        <div class="dish-info">
+          <div class="dish-badge-row"><span class="badge badge-hot">🔥 Spicy</span></div>
+          <div class="dish-name">Schezwan Chicken Roll</div>
+          <div class="dish-desc">Spiced chicken tossed in Schezwan sauce, wrapped tight in a buttery paratha</div>
+          <div class="dish-footer">
+            <div class="dish-price">£7.49</div><a href="#order-footer" class="dish-order">Order →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dish-row">
+        <div class="dish-photo has-photo" style="background-image:url('menu-icons/Paneer Kathi Roll.jpg');"></div>
+        <div class="dish-info">
+          <div class="dish-badge-row"><span class="badge badge-veg">Veg</span></div>
+          <div class="dish-name">Paneer Kathi Roll</div>
+          <div class="dish-desc">Soft paneer with peppers and spices, wrapped in a layered paratha</div>
+          <div class="dish-footer">
+            <div class="dish-price">£6.99</div><a href="#order-footer" class="dish-order">Order →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dish-row">
+        <div class="dish-photo has-photo" style="background-image:url('menu-icons/Schezwan Paneer Roll.jpg');"></div>
+        <div class="dish-info">
+          <div class="dish-badge-row"><span class="badge badge-veg">Veg</span><span class="badge badge-hot">🔥
+              Spicy</span></div>
+          <div class="dish-name">Schezwan Paneer Roll</div>
+          <div class="dish-desc">Paneer with fiery Schezwan sauce and crisp veggies in a paratha. Heat meets comfort.
+          </div>
+          <div class="dish-footer">
+            <div class="dish-price">£7.49</div><a href="#order-footer" class="dish-order">Order →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dish-row">
+        <div class="dish-photo has-photo" style="background-image:url('menu-icons/Omlette Paratha.jpg');"></div>
+        <div class="dish-info">
+          <div class="dish-badge-row"></div>
+          <div class="dish-name">Omlette Paratha</div>
+          <div class="dish-desc">Fluffy spiced omelette folded inside a warm layered paratha. The Mumbai breakfast icon.
+          </div>
+          <div class="dish-footer">
+            <div class="dish-price">£4.99</div><a href="#order-footer" class="dish-order">Order →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════ LOADED FRIES ══════════ -->
+  <section class="menu-section reveal" id="loaded-fries">
+    <div class="sec-header">
+      <div>
+        <div class="sec-eyebrow">Loaded Fries</div>
+        <h2 class="sec-title">Fries, But <em>Better</em></h2>
+        <p class="sec-desc">Crispy fries loaded with proper Indian toppings</p>
+      </div>
+      <div class="sec-count">3 dishes</div>
+    </div>
+    <div class="dish-grid">
+
+      <div class="dish-row">
+        <div class="dish-photo has-photo" style="background-image:url('menu-icons/Loaded Butter Paneer Fries.jpg');">
+        </div>
+        <div class="dish-info">
+          <div class="dish-badge-row"><span class="badge badge-popular">Must Try</span><span
+              class="badge badge-veg">Veg</span></div>
+          <div class="dish-name">Loaded Butter Paneer Fries</div>
+          <div class="dish-desc">Crispy fries smothered in rich, silky butter paneer sauce. East meets West.</div>
+          <div class="dish-footer">
+            <div class="dish-price">£6.99</div><a href="#order-footer" class="dish-order">Order →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dish-row">
+        <div class="dish-photo has-photo" style="background-image:url('menu-icons/Loaded Cheesy Fries.jpg');"></div>
+        <div class="dish-info">
+          <div class="dish-badge-row"><span class="badge badge-veg">Veg</span></div>
+          <div class="dish-name">Loaded Cheesy Fries</div>
+          <div class="dish-desc">Golden fries topped with melted cheese. Classic, indulgent, impossible to resist.</div>
+          <div class="dish-footer">
+            <div class="dish-price">£4.99</div><a href="#order-footer" class="dish-order">Order →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dish-row">
+        <div class="dish-photo has-photo" style="background-image:url('menu-icons/Masala Fries.jpg');"></div>
+        <div class="dish-info">
+          <div class="dish-badge-row"></div>
+          <div class="dish-name">Masala Fries</div>
+          <div class="dish-desc">Crispy fries tossed in Mumbai-style chaat masala with a tangy kick</div>
+          <div class="dish-footer">
+            <div class="dish-price">£3.99</div><a href="#order-footer" class="dish-order">Order →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════ SATURDAY SPECIALS ══════════ -->
+  <section class="menu-section reveal" id="saturday">
+    <div class="sec-header">
+      <div>
+        <div class="sec-eyebrow">Saturday Only · Limited qty</div>
+        <h2 class="sec-title">Saturday <em>Specials</em></h2>
+        <p class="sec-desc">Made fresh every Saturday from 11:30am. Once gone — gone until next week.</p>
+      </div>
+      <div class="sec-count">3 dishes</div>
+    </div>
+
+    <div class="sat-band">
+      <div class="sat-band-inner">
+        <div>
+          <h3>Saturday <em>Biryani</em> is here.</h3>
+          <p>Fragrant basmati, whole spices, slow-cooked protein. Limited portions every week.</p>
+        </div>
+        <div class="sat-items">
+          <div class="sat-item">🍗 Chicken <strong>£8.99</strong></div>
+          <div class="sat-item">🐑 Mutton <strong>£9.99</strong></div>
+          <div class="sat-item">🥦 Veg <strong>£7.99</strong></div>
+        </div>
+        <a href="#order-footer" class="sat-cta-btn">Order Now →</a>
+      </div>
+    </div>
+
+    <div class="dish-grid" style="margin-top:1px">
+
+      <div class="dish-row">
+        <div class="dish-photo has-photo" style="background-image:url('menu-icons/Chicken Biryani.jpg');"></div>
+        <div class="dish-info">
+          <div class="dish-badge-row"><span class="badge badge-sat">Saturday Only</span><span
+              class="badge badge-popular">Sells Out</span></div>
+          <div class="dish-name">Chicken Biryani</div>
+          <div class="dish-desc">Fragrant long-grain basmati layered with tender spiced chicken and fried onions</div>
+          <div class="dish-footer">
+            <div class="dish-price">£8.99</div><a href="#order-footer" class="dish-order">Order →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dish-row">
+        <div class="dish-photo has-photo" style="background-image:url('menu-icons/Mutton Biryani.jpg');"></div>
+        <div class="dish-info">
+          <div class="dish-badge-row"><span class="badge badge-sat">Saturday Only</span><span
+              class="badge badge-new">Premium</span></div>
+          <div class="dish-name">Mutton Biryani</div>
+          <div class="dish-desc">Slow-cooked tender mutton with aged basmati. Rich, deep, unforgettable.</div>
+          <div class="dish-footer">
+            <div class="dish-price">£9.99</div><a href="#order-footer" class="dish-order">Order →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dish-row">
+        <div class="dish-photo has-photo" style="background-image:url('menu-icons/Veg Biryani.jpg');"></div>
+        <div class="dish-info">
+          <div class="dish-badge-row"><span class="badge badge-sat">Saturday Only</span><span
+              class="badge badge-veg">Veg</span></div>
+          <div class="dish-name">Veg Biryani</div>
+          <div class="dish-desc">Fragrant basmati with whole spices and seasonal vegetables. Light and aromatic.</div>
+          <div class="dish-footer">
+            <div class="dish-price">£7.99</div><a href="#order-footer" class="dish-order">Order →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════ RICE & BREADS ══════════ -->
+  <section class="menu-section reveal" id="rice-breads">
+    <div class="sec-header">
+      <div>
+        <div class="sec-eyebrow">Sides</div>
+        <h2 class="sec-title">Rice & <em>Breads</em></h2>
+        <p class="sec-desc">The perfect companions to any curry or main</p>
+      </div>
+      <div class="sec-count">8 dishes</div>
+    </div>
+    <div class="dish-grid">
+
+      <div class="dish-row">
+        <div class="dish-photo has-photo" style="background-image:url('menu-icons/Tawa Pulao.jpg');"></div>
+        <div class="dish-info">
+          <div class="dish-badge-row"><span class="badge badge-popular">Mumbai Street</span><span
+              class="badge badge-veg">Veg</span></div>
+          <div class="dish-name">Tawa Pulao</div>
+          <div class="dish-desc">Mumbai's iconic street-style spiced rice cooked on a flat tawa with pav bhaji masala
+          </div>
+          <div class="dish-footer">
+            <div class="dish-price">£6.99</div><a href="#order-footer" class="dish-order">Order →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dish-row">
+        <div class="dish-photo has-photo" style="background-image:url('menu-icons/Jeera Rice.jpg');"></div>
+        <div class="dish-info">
+          <div class="dish-badge-row"><span class="badge badge-veg">Veg</span></div>
+          <div class="dish-name">Jeera Rice</div>
+          <div class="dish-desc">Fragrant basmati tempered with cumin seeds and a touch of ghee</div>
+          <div class="dish-footer">
+            <div class="dish-price">£4.99</div><a href="#order-footer" class="dish-order">Order →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dish-row">
+        <div class="dish-photo has-photo" style="background-image:url('menu-icons/Peas Pulao.jpg');"></div>
+        <div class="dish-info">
+          <div class="dish-badge-row"><span class="badge badge-veg">Veg</span></div>
+          <div class="dish-name">Peas Pulao</div>
+          <div class="dish-desc">Lightly spiced basmati with sweet green peas. Clean and comforting.</div>
+          <div class="dish-footer">
+            <div class="dish-price">£4.99</div><a href="#order-footer" class="dish-order">Order →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dish-row">
+        <div class="dish-photo has-photo" style="background-image:url('menu-icons/Plain Rice.jpg');"></div>
+        <div class="dish-info">
+          <div class="dish-badge-row"><span class="badge badge-veg">Veg</span></div>
+          <div class="dish-name">Plain Rice</div>
+          <div class="dish-desc">Steamed basmati rice. Simple and essential.</div>
+          <div class="dish-footer">
+            <div class="dish-price">£3.99</div><a href="#order-footer" class="dish-order">Order →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dish-row">
+        <div class="dish-photo has-photo" style="background-image:url('menu-icons/Laccha Paratha.jpg');"></div>
+        <div class="dish-info">
+          <div class="dish-badge-row"><span class="badge badge-popular">Best Pair</span><span
+              class="badge badge-veg">Veg</span></div>
+          <div class="dish-name">Laccha Paratha</div>
+          <div class="dish-desc">Multi-layered flaky whole wheat paratha, brushed with butter. The ideal curry
+            companion.</div>
+          <div class="dish-footer">
+            <div class="dish-price">£1.89</div><a href="#order-footer" class="dish-order">Order →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dish-row">
+        <div class="dish-photo has-photo" style="background-image:url('menu-icons/Chapati.jpg');"></div>
+        <div class="dish-info">
+          <div class="dish-badge-row"><span class="badge badge-veg">Veg</span></div>
+          <div class="dish-name">Chapati</div>
+          <div class="dish-desc">Soft thin whole wheat chapati. A staple of every Indian home.</div>
+          <div class="dish-footer">
+            <div class="dish-price">£0.99</div><a href="#order-footer" class="dish-order">Order →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dish-row">
+        <div class="dish-photo has-photo" style="background-image:url('menu-icons/Chole.jpg');"></div>
+        <div class="dish-info">
+          <div class="dish-badge-row"><span class="badge badge-veg">Veg</span></div>
+          <div class="dish-name">Chole</div>
+          <div class="dish-desc">Slow-cooked chickpeas in a deeply spiced tangy masala. Hearty and crowd favourite.
+          </div>
+          <div class="dish-footer">
+            <div class="dish-price">£4.99</div><a href="#order-footer" class="dish-order">Order →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dish-row">
+        <div class="dish-photo" style="background-image:url('menu-icons/Raita.jpg');"></div>
+        <div class="dish-info">
+          <div class="dish-badge-row"><span class="badge badge-veg">Veg</span></div>
+          <div class="dish-name">Raita</div>
+          <div class="dish-desc">Cool seasoned yoghurt with cucumber. The perfect cooling side for spicy dishes.</div>
+          <div class="dish-footer">
+            <div class="dish-price">£1.99</div><a href="#order-footer" class="dish-order">Order →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════ DRINKS ══════════ -->
+  <section class="menu-section reveal" id="drinks">
+    <div class="sec-header">
+      <div>
+        <div class="sec-eyebrow">Drinks</div>
+        <h2 class="sec-title">Sip on <em>This</em></h2>
+        <p class="sec-desc">End with something warm, cold or fizzy</p>
+      </div>
+      <div class="sec-count">3 drinks</div>
+    </div>
+    <div class="dish-grid">
+
+      <div class="dish-row">
+        <div class="dish-photo has-photo" style="background-image:url('menu-icons/Karak Chai.png');"></div>
+        <div class="dish-info">
+          <div class="dish-badge-row"><span class="badge badge-popular">Fan Fave</span></div>
+          <div class="dish-name">Karak Chai</div>
+          <div class="dish-desc">Strong, milky, perfectly spiced Indian tea. The drink that runs through Mumbai's veins.
+            You don't skip the chai.</div>
+          <div class="dish-footer">
+            <div class="dish-price">£1.50</div><a href="#order-footer" class="dish-order">Order →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dish-row">
+        <div class="dish-photo has-photo" style="background-image:url('menu-icons/Soda.jpg');"></div>
+        <div class="dish-info">
+          <div class="dish-badge-row"></div>
+          <div class="dish-name">Soda</div>
+          <div class="dish-desc">Ice-cold fizzy drink. The perfect cool-down after something spicy.</div>
+          <div class="dish-footer">
+            <div class="dish-price">£1.00</div><a href="#order-footer" class="dish-order">Order →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dish-row">
+        <div class="dish-photo has-photo" style="background-image:url('menu-icons/Water Bottle.jpg');"></div>
+        <div class="dish-info">
+          <div class="dish-badge-row"></div>
+          <div class="dish-name">Water Bottle</div>
+          <div class="dish-desc">Still mineral water. Stay hydrated between bites.</div>
+          <div class="dish-footer">
+            <div class="dish-price">£1.00</div><a href="#order-footer" class="dish-order">Order →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- STICKY ORDER FOOTER -->
+  <div id="order-footer">
+    <div class="of-text">Hungry? <span>Order now →</span></div>
+    <div class="of-btns">
+      <a href="https://deliveroo.co.uk/menu/london/sutton/mumbai-adda" target="_blank" rel="noopener"
+        class="of-btn ob-deliveroo">🛵 Deliveroo</a>
+      <a href="https://www.just-eat.co.uk/restaurants-mumbai-adda-sutton/menu" target="_blank" rel="noopener"
+        class="of-btn ob-justeat">🍽 Just Eat</a>
+      <a href="https://www.ubereats.com/gb/store/mumbai-adda" target="_blank" rel="noopener" class="of-btn ob-uber">🚗
+        Uber Eats</a>
+    </div>
+  </div>
+
+  <!-- WHATSAPP -->
+  <a href="https://wa.me/447887503324?text=Hi%20Mumbai%20Adda!%20I'd%20like%20to%20order%20please%20🍛" id="wa-btn"
+    target="_blank" rel="noopener">💬</a>
+
+  <!-- FOOTER -->
+  <div class="mini-footer">
+    <a href="index.html" class="nav-logo-wrap"
+      style="gap:.5rem;font-family:'Fraunces',serif;font-size:1.1rem;font-weight:900;color:#fff;"><svg width="28"
+        height="28" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 18 Q14 12 16 6" fill="none" stroke="#F07818" stroke-width="2" stroke-linecap="round"
+          opacity=".8" />
+        <path d="M26 15 Q24 9 26 3" fill="none" stroke="#F07818" stroke-width="2" stroke-linecap="round" opacity=".8" />
+        <path d="M36 18 Q34 12 36 6" fill="none" stroke="#F07818" stroke-width="2" stroke-linecap="round"
+          opacity=".8" />
+        <ellipse cx="26" cy="36" rx="20" ry="8" fill="none" stroke="#F07818" stroke-width="2.5" />
+        <path d="M7 36 Q7 23 26 21 Q45 23 45 36" fill="#F07818" opacity=".15" />
+        <path d="M7 36 Q7 23 26 21 Q45 23 45 36" fill="none" stroke="#F07818" stroke-width="2" />
+        <line x1="12" y1="44" x2="40" y2="44" stroke="#F07818" stroke-width="1.5" opacity=".4" />
+      </svg>Mumbai<em style="color:var(--saffron);font-style:italic;font-weight:300">Adda</em></a>
+    <div class="mf-links">
+      <a href="index.html">Home</a>
+      <a href="our-story.html">Our Story</a>
+      <a href="find-us.html">Find Us</a>
+    </div>
+    <div class="mf-copy">© 2025 Mumbai Adda · Sutton, London</div>
+  </div>
+
+  <script>
+    const TABS_H = 68 + 50;
+    const SECTIONS = ['bombay-bites', 'indo-chinese', 'indian-mains', 'wraps-rolls', 'loaded-fries', 'saturday', 'rice-breads', 'drinks'];
+
+    function goTo(id, btn) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const el = document.getElementById(id);
+      if (!el) return;
+      window.scrollTo({ top: el.getBoundingClientRect().top + scrollY - TABS_H - 16, behavior: 'smooth' });
+    }
+
+    // active tab on scroll
+    window.addEventListener('scroll', () => {
+      let cur = SECTIONS[0];
+      SECTIONS.forEach(id => {
+        const el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top - TABS_H - 30 <= 0) cur = id;
+      });
+      document.querySelectorAll('.tab-btn').forEach((btn, i) => {
+        btn.classList.toggle('active', SECTIONS[i] === cur);
+      });
+    }, { passive: true });
+
+    // reveal on scroll
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // fix dish-photo alt text issue — ensure has-photo class applied when bg is set
+    document.querySelectorAll('.dish-photo').forEach(el => {
+      if (el.style.backgroundImage && el.style.backgroundImage !== 'none') {
+        el.classList.add('has-photo');
+      }
+    });
+
+    /* ── Theme Toggle ── */
+    function toggleTheme() {
+      const isLight = document.body.classList.toggle('light-mode');
+      const icon = document.getElementById('tt-icon');
+      const label = document.getElementById('tt-label');
+      icon.textContent = isLight ? '🌙' : '☀️';
+      label.textContent = isLight ? 'Dark' : 'Light';
+      try { localStorage.setItem('maTheme', isLight ? 'light' : 'dark'); } catch (e) { }
+    }
+    (function () {
+      try {
+        if (localStorage.getItem('maTheme') === 'light') {
+          document.body.classList.add('light-mode');
+          const icon = document.getElementById('tt-icon');
+          const label = document.getElementById('tt-label');
+          if (icon) icon.textContent = '🌙';
+          if (label) label.textContent = 'Dark';
+        }
+      } catch (e) { }
+    })();
+  </script>
+</body>
+
+</html>
