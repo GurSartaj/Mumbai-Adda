@@ -1065,6 +1065,46 @@
       color: var(--chilli);
     }
 
+    /* hamburger */
+    .nav-hamburger {
+      display:none;
+      flex-direction:column; justify-content:center; align-items:center;
+      gap:5px; width:40px; height:40px; cursor:pointer;
+      background:none; border:none; padding:4px; flex-shrink:0;
+    }
+    .nav-hamburger span {
+      display:block; width:22px; height:2px;
+      background:#fff; border-radius:2px;
+      transition:transform .3s, opacity .3s;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity:0; }
+    .nav-hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+
+    .nav-mobile-drawer {
+      display:none;
+      position:fixed; top:60px; left:0; right:0; z-index:399;
+      background:rgba(22,12,4,.98);
+      backdrop-filter:blur(24px);
+      border-bottom:1px solid rgba(240,120,24,.2);
+      padding:1.2rem 1.5rem 1.5rem;
+      flex-direction:column; gap:.25rem;
+    }
+    .nav-mobile-drawer.open { display:flex; }
+    .nav-mobile-drawer a {
+      color:rgba(255,255,255,.75); font-size:1rem; font-weight:500;
+      padding:.75rem 0; border-bottom:1px solid rgba(255,255,255,.07);
+      transition:color .2s; text-decoration:none;
+    }
+    .nav-mobile-drawer a:last-child { border-bottom:none; }
+    .nav-mobile-drawer a:hover, .nav-mobile-drawer a.active { color:var(--saffron); }
+    .nav-mobile-drawer .drawer-cta {
+      margin-top:.75rem; background:var(--saffron); color:var(--dark);
+      padding:.75rem 1.4rem; font-weight:700; font-size:.9rem;
+      border-radius:2px; text-align:center; border-bottom:none;
+    }
+    .nav-mobile-drawer .drawer-cta:hover { background:var(--saffron-hot); color:var(--dark); }
+
     /* mobile */
     @media(max-width:768px) {
 
@@ -1082,7 +1122,16 @@
       .nav-logo {
         font-size: 1.25rem;
       }
+
+      .nav-cta { display:none; }
+      .nav-hamburger { display:flex; }
     }
+
+    body.light-mode .nav-hamburger span { background:var(--dark); }
+    body.light-mode .nav-mobile-drawer { background:rgba(253,246,230,.98); }
+    body.light-mode .nav-mobile-drawer a { color:rgba(60,22,8,.6); border-bottom-color:rgba(88,48,24,.1); }
+    body.light-mode .nav-mobile-drawer a:hover,
+    body.light-mode .nav-mobile-drawer a.active { color:var(--chilli); }
   </style>
 </head>
 
@@ -1104,7 +1153,18 @@
       <li><a href="find-us.html">Find Us</a></li>
     </ul>
     <a href="#order-footer" class="nav-cta">Order Now →</a>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
+
+  <div class="nav-mobile-drawer" id="nav-mobile-drawer">
+    <a href="index.html">Home</a>
+    <a href="menu.html" class="active">Menu</a>
+    <a href="our-story.html">Our Story</a>
+    <a href="find-us.html">Find Us</a>
+    <a href="#order-footer" class="drawer-cta">Order Now →</a>
+  </div>
 
   <!-- PAGE HERO -->
   <div class="page-hero">
@@ -1953,7 +2013,7 @@
       <a href="our-story.html">Our Story</a>
       <a href="find-us.html">Find Us</a>
     </div>
-    <div class="mf-copy">© 2025 Mumbai Adda · Sutton, London</div>
+    <div class="mf-copy">© 2026 Mumbai Adda · Sutton, London</div>
   </div>
 
   <script>
@@ -1991,6 +2051,21 @@
       if (el.style.backgroundImage && el.style.backgroundImage !== 'none') {
         el.classList.add('has-photo');
       }
+    });
+
+    /* ── Mobile hamburger ── */
+    const hamburger = document.getElementById('nav-hamburger');
+    const mobileDrawer = document.getElementById('nav-mobile-drawer');
+    hamburger.addEventListener('click', () => {
+      const isOpen = mobileDrawer.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    });
+    mobileDrawer.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        mobileDrawer.classList.remove('open');
+        hamburger.classList.remove('open');
+      });
     });
 
     /* ── Theme Toggle ── */

@@ -207,6 +207,57 @@ img { display:block; }
   opacity:0; animation:up .8s .22s forwards;
 }
 .hero-h1 .italic { display:block; color:var(--saffron); font-style:italic; font-weight:300; font-size:1.08em; }
+
+/* ── SMELL STEAM ── */
+.smell-wrap {
+  position:relative;
+  display:inline-block;
+  z-index:5;
+}
+.steam-container {
+  position:absolute;
+  bottom:60%;
+  left:50%;
+  transform:translateX(-50%);
+  width:130px;
+  height:0;
+  pointer-events:none;
+  overflow:visible;
+  z-index:10;
+}
+.sw {
+  position:absolute;
+  bottom:0;
+  width:14px;
+  border-radius:50% 50% 40% 40%;
+  background:linear-gradient(to top,
+    rgba(255,200,90,1),
+    rgba(255,235,170,.7),
+    rgba(255,245,220,.3),
+    transparent);
+  filter:blur(5px);
+  opacity:0;
+  transform-origin:bottom center;
+}
+.sw1 { left:6px;   height:65px; animation:steam-a 3.5s ease-in-out infinite 0s;   }
+.sw2 { left:40px;  height:82px; animation:steam-b 3.5s ease-in-out infinite 0.9s; }
+.sw3 { left:74px;  height:72px; animation:steam-a 3.5s ease-in-out infinite 1.8s; }
+.sw4 { left:23px;  height:58px; animation:steam-b 3.5s ease-in-out infinite 2.7s; }
+
+@keyframes steam-a {
+  0%   { opacity:0;   transform:translateY(0)     scaleX(1);   }
+  12%  { opacity:1;   }
+  65%  { opacity:.6;  }
+  100% { opacity:0;   transform:translateY(-90px)  scaleX(3.2); }
+}
+@keyframes steam-b {
+  0%   { opacity:0;   transform:translateY(0)     scaleX(1);   }
+  12%  { opacity:.95; }
+  65%  { opacity:.55; }
+  100% { opacity:0;   transform:translateY(-100px) scaleX(3.8); }
+}
+
+
 /* "Mumbai" — Yatra One with neon glow effect */
 .hero-h1 .mumbai-word {
   display:block;
@@ -268,8 +319,8 @@ img { display:block; }
 .btn-fire:hover::after { transform:translateX(100%); }
 .btn-fire:hover { background:var(--saffron-hot); transform:translateY(-2px); box-shadow:0 12px 35px rgba(240,120,24,.45); }
 .btn-menu {
-  color:rgba(255,255,255,.6); font-size:.9rem;
-  border-bottom:1px solid rgba(255,255,255,.2);
+  color:rgba(255,255,255,.82); font-size:.9rem;
+  border-bottom:1px solid rgba(255,255,255,.35);
   padding-bottom:2px; transition:all .2s;
 }
 .btn-menu:hover { color:#fff; border-color:#fff; }
@@ -388,41 +439,6 @@ img { display:block; }
   transition:filter .5s, transform .6s ease;
 }
 .sc:hover .sc-bg { filter:brightness(.45) saturate(1.6); transform:scale(1.05); }
-.sc-body {
-  position:absolute; inset:0;
-  display:flex; flex-direction:column; justify-content:flex-end;
-  padding:2rem;
-  background:linear-gradient(to top, rgba(22,12,4,.92) 0%, transparent 55%);
-}
-.sc-num {
-  font-family:'Fraunces',serif;
-  font-size:3rem; font-weight:900;
-  color:rgba(255,255,255,.07); line-height:1;
-  position:absolute; top:1.2rem; left:1.5rem;
-  transition:color .3s;
-}
-.sc:hover .sc-num { color:rgba(240,120,24,.18); }
-.sc-tag {
-  font-size:.6rem; font-weight:700; letter-spacing:.22em;
-  text-transform:uppercase; color:var(--saffron); margin-bottom:.3rem;
-}
-.sc-name {
-  font-family:'Fraunces',serif;
-  font-size:1.6rem; font-weight:900;
-  color:#fff; letter-spacing:-.02em; line-height:1;
-}
-.sc-name em { color:var(--saffron); font-style:italic; font-weight:300; }
-.sc-line {
-  width:0; height:2px; background:var(--saffron);
-  margin:.6rem 0; transition:width .4s ease;
-}
-.sc:hover .sc-line { width:36px; }
-.sc-desc {
-  color:rgba(255,255,255,0); font-size:.8rem; line-height:1.55;
-  font-weight:300; max-height:0; overflow:hidden;
-  transition:max-height .4s ease, color .3s;
-}
-.sc:hover .sc-desc { color:rgba(255,255,255,.6); max-height:80px; }
 .sc-body { position:absolute; inset:0; display:flex; flex-direction:column; justify-content:flex-end; padding:2.5rem 2rem; background:linear-gradient(to top, rgba(22,12,4,.92) 0%, transparent 55%); }
 .sc-num { font-family:'Fraunces',serif; font-size:5rem; font-weight:900; color:rgba(255,255,255,.06); position:absolute; top:1.5rem; left:1.8rem; line-height:1; transition:color .3s; }
 .sc:hover .sc-num { color:rgba(240,120,24,.15); }
@@ -431,8 +447,8 @@ img { display:block; }
 .sc-name em { color:var(--saffron); font-style:italic; font-weight:300; }
 .sc-line { width:0; height:2px; background:var(--saffron); margin:.8rem 0; transition:width .4s ease; }
 .sc:hover .sc-line { width:40px; }
-.sc-desc { color:rgba(255,255,255,0); font-size:.84rem; line-height:1.6; font-weight:300; max-height:0; overflow:hidden; transition:max-height .4s ease, color .3s; }
-.sc:hover .sc-desc { color:rgba(255,255,255,.6); max-height:100px; }
+.sc-desc { color:rgba(255,255,255,0); font-size:.84rem; line-height:1.6; font-weight:400; max-height:0; overflow:hidden; transition:max-height .4s ease, color .3s; }
+.sc:hover .sc-desc { color:#fff; max-height:100px; }
 
 /* ═══════════════════════════════════════════
    SIGNATURE DISHES
@@ -464,7 +480,7 @@ img { display:block; }
 .dc:not(.big) .dc-name { font-size:1.3rem; }
 .dc-desc { font-family:'Instrument Serif',serif; font-style:italic; color:rgba(255,255,255,0); font-size:.88rem; line-height:1.5; margin-top:.4rem; transition:color .3s; }
 .dc.big .dc-desc { font-size:1rem; }
-.dc:hover .dc-desc { color:rgba(255,255,255,.5); }
+.dc:hover .dc-desc { color:rgba(255,255,255,.88); }
 .dc-foot { display:flex; justify-content:space-between; align-items:center; margin-top:1rem; }
 .dc-price { font-family:'Fraunces',serif; font-weight:700; color:var(--gold); }
 .dc.big .dc-price { font-size:1.5rem; }
@@ -571,11 +587,6 @@ body.light-mode {
 }
 
 /* Nav light */
-body.light-mode 
-body.light-mode 
-body.light-mode 
-
-body.light-mode 
 body.light-mode .nav-logo-img text { fill:var(--dark) !important; }
 
 /* Sticky bar light */
@@ -669,6 +680,10 @@ body.light-mode .rev-text { color:rgba(60,22,8,.65); }
 body.light-mode .rev-author { color:rgba(60,22,8,.35); }
 body.light-mode .reviews-head .s-title { color:var(--dark); }
 body.light-mode .reviews-head .s-title em { color:var(--chilli); }
+body.light-mode .rev-arrow { border-color:rgba(88,48,24,.2); background:rgba(88,48,24,.05); color:var(--dark); }
+body.light-mode .rev-arrow:hover { background:var(--chilli); border-color:var(--chilli); color:#fff; }
+body.light-mode .rev-dot { background:rgba(88,48,24,.2); }
+body.light-mode .rev-dot.active { background:var(--chilli); }
 
 /* Order section light */
 body.light-mode .order-section { background:var(--parchment); }
@@ -718,23 +733,62 @@ body.light-mode .find-us .s-eyebrow::before { background:var(--chilli); }
 .how-head .s-eyebrow { justify-content:center; }
 .how-head .s-eyebrow::before { display:none; }
 .how-head .s-title-dark { font-size:clamp(1.8rem,4vw,3rem); }
+
 .how-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
+
 .how-card {
   background:var(--parchment);
   padding:2.2rem 2rem;
   position:relative; overflow:hidden;
   transition:background .3s;
+  opacity:0;
+  transform:translateY(40px);
 }
+.how-card.card-in {
+  opacity:1;
+  transform:translateY(0);
+  transition:opacity 1s ease, transform 1s ease;
+}
+.how-card:nth-child(1).card-in { transition-delay:0s; }
+.how-card:nth-child(2).card-in { transition-delay:.25s; }
+.how-card:nth-child(3).card-in { transition-delay:.5s; }
+
 .how-card:hover { background:#F5E8CC; }
 .how-num {
   font-family:'Fraunces',serif;
   font-size:6rem; font-weight:900; line-height:1;
   color:rgba(88,48,24,.07);
   position:absolute; top:.3rem; right:1.2rem;
-  transition:color .3s;
 }
-.how-card:hover .how-num { color:rgba(240,120,24,.12); }
-.how-icon { font-size:2rem; margin-bottom:1rem; }
+.how-card:hover .how-num { color:rgba(240,120,24,.18); }
+
+/* ghost numbers appear/disappear in sequence */
+.how-card.card-in .how-num {
+  animation: num-pulse 3.6s ease-in-out infinite;
+}
+.how-card:nth-child(1).card-in .how-num { animation-delay: 0.8s; }
+.how-card:nth-child(2).card-in .how-num { animation-delay: 2s; }
+.how-card:nth-child(3).card-in .how-num { animation-delay: 3.2s; }
+@keyframes num-pulse {
+  0%, 100%  { color: rgba(88,48,24,.07); }
+  20%       { color: rgba(240,120,24,.22); }
+  45%       { color: rgba(240,120,24,.22); }
+  65%       { color: rgba(88,48,24,.07); }
+}
+
+.how-icon {
+  font-size:2rem; margin-bottom:1rem;
+  display:inline-block;
+}
+/* continuous float — starts after card slides in */
+.how-card.card-in .how-icon { animation:icon-float 2.8s ease-in-out infinite; }
+.how-card:nth-child(2).card-in .how-icon { animation-delay:.4s; }
+.how-card:nth-child(3).card-in .how-icon { animation-delay:.8s; }
+@keyframes icon-float {
+  0%, 100% { transform:translateY(0); }
+  50%       { transform:translateY(-7px); }
+}
+
 .how-title { font-family:'Fraunces',serif; font-size:1.3rem; font-weight:900; color:var(--dark); letter-spacing:-.02em; margin-bottom:.6rem; }
 .how-title em { color:var(--chilli); font-style:italic; font-weight:300; }
 .how-desc { color:var(--muted); font-size:.88rem; line-height:1.75; font-weight:300; }
@@ -769,19 +823,49 @@ body.light-mode .find-us .s-eyebrow::before { background:var(--chilli); }
 .st-text .s-title { font-size:clamp(2.5rem,4vw,3.8rem); margin-bottom:2rem; }
 .st-pull { font-family:'Instrument Serif',serif; font-size:1.25rem; font-style:italic; color:rgba(255,255,255,.5); line-height:1.7; border-left:2px solid var(--saffron); padding-left:1.5rem; margin:2rem 0; }
 .st-pull strong { color:rgba(255,255,255,.8); font-style:normal; }
-.st-body { color:rgba(255,255,255,.42); font-size:.97rem; line-height:1.95; font-weight:300; margin-bottom:1rem; }
-.st-body strong { color:rgba(255,255,255,.72); font-weight:500; }
+.st-body { color:rgba(255,255,255,.68); font-size:.97rem; line-height:1.95; font-weight:300; margin-bottom:1rem; }
+.st-body strong { color:rgba(255,255,255,.88); font-weight:500; }
 .btn-saffron { display:inline-flex; align-items:center; gap:.6rem; background:var(--saffron); color:var(--dark); padding:.9rem 2rem; font-size:.9rem; font-weight:700; border-radius:2px; margin-top:1.5rem; transition:all .2s; }
 .btn-saffron:hover { background:var(--saffron-hot); transform:translateY(-2px); box-shadow:0 8px 25px rgba(240,120,24,.4); }
 
 /* ═══════════════════════════════════════════
    REVIEWS
 ═══════════════════════════════════════════ */
-.reviews { padding:5rem 3rem; background:var(--espresso); }
+.reviews { padding:5rem 0 5rem; background:var(--espresso); overflow:hidden; }
+.reviews-inner { padding:0 3rem; }
 .reviews-head { margin-bottom:2.5rem; display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:1rem; }
 .reviews-head .s-title { font-size:clamp(1.6rem,3vw,2.4rem); }
-.rev-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
+
+/* arrow buttons */
+.rev-arrows { display:flex; gap:.6rem; flex-shrink:0; }
+.rev-arrow {
+  width:42px; height:42px; border-radius:50%;
+  border:1px solid rgba(255,255,255,.15);
+  background:rgba(255,255,255,.05);
+  color:#fff; font-size:1rem; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  transition:background .2s, border-color .2s, transform .15s;
+  flex-shrink:0;
+}
+.rev-arrow:hover { background:var(--saffron); border-color:var(--saffron); color:var(--dark); transform:scale(1.08); }
+.rev-arrow:disabled { opacity:.25; cursor:default; transform:none; }
+
+/* scroll track */
+.rev-track {
+  display:flex; gap:1rem;
+  overflow-x:auto; scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;
+  padding:0 3rem 1.5rem;
+  cursor:grab;
+  -webkit-overflow-scrolling:touch;
+}
+.rev-track:active { cursor:grabbing; }
+.rev-track::-webkit-scrollbar { display:none; }
+.rev-track { -ms-overflow-style:none; scrollbar-width:none; }
+
 .rev-card {
+  flex:0 0 calc(36% - .5rem);
+  scroll-snap-align:start;
   background:rgba(255,255,255,.04);
   border:1px solid rgba(255,255,255,.07);
   border-radius:4px; padding:1.5rem;
@@ -791,9 +875,18 @@ body.light-mode .find-us .s-eyebrow::before { background:var(--chilli); }
 .rev-card:hover { background:rgba(240,120,24,.08); border-color:rgba(240,120,24,.25); transform:translateY(-3px); }
 .rev-card::before { content:'"'; position:absolute; top:-1.5rem; right:1rem; font-family:'Fraunces',serif; font-size:7rem; font-weight:900; color:rgba(240,120,24,.07); line-height:1; pointer-events:none; }
 .rev-stars { color:var(--turmeric); font-size:.85rem; letter-spacing:.06em; margin-bottom:.8rem; }
-.rev-text { font-family:'Instrument Serif',serif; font-style:italic; font-size:.97rem; color:rgba(255,255,255,.72); line-height:1.65; margin-bottom:1.2rem; }
-.rev-author { font-size:.78rem; color:rgba(255,255,255,.3); font-weight:500; }
+.rev-text { font-family:'Instrument Serif',serif; font-style:italic; font-size:.97rem; color:rgba(255,255,255,.82); line-height:1.65; margin-bottom:1.2rem; }
+.rev-author { font-size:.78rem; color:rgba(255,255,255,.6); font-weight:500; }
 .rev-dish { display:inline-block; background:rgba(240,120,24,.12); color:var(--saffron); font-size:.65rem; font-weight:700; padding:.18rem .6rem; border-radius:2px; margin-top:.35rem; letter-spacing:.05em; text-transform:uppercase; }
+
+/* dots */
+.rev-dots { display:flex; gap:.5rem; justify-content:center; margin-top:1.5rem; }
+.rev-dot {
+  width:6px; height:6px; border-radius:50%;
+  background:rgba(255,255,255,.2); border:none; cursor:pointer;
+  transition:background .25s, transform .25s;
+}
+.rev-dot.active { background:var(--saffron); transform:scale(1.3); }
 
 /* ═══════════════════════════════════════════
    ORDER PLATFORMS
@@ -807,12 +900,12 @@ body.light-mode .find-us .s-eyebrow::before { background:var(--chilli); }
 }
 .order-section::after { content:''; position:absolute; width:600px; height:600px; border-radius:50%; background:radial-gradient(circle, rgba(240,120,24,.07) 0%, transparent 65%); right:-100px; top:50%; transform:translateY(-50%); pointer-events:none; }
 .order-text .s-title { font-size:clamp(2.5rem,4.5vw,4.2rem); margin-bottom:1.5rem; }
-.order-text p { color:rgba(255,255,255,.4); font-size:.97rem; line-height:1.9; font-weight:300; }
+.order-text p { color:rgba(255,255,255,.65); font-size:.97rem; line-height:1.9; font-weight:300; }
 .hours { margin-top:2.5rem; }
 .hours-label { font-size:.62rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:rgba(255,255,255,.22); margin-bottom:.8rem; }
 .h-row { display:flex; justify-content:space-between; padding:.6rem 0; border-bottom:1px solid rgba(255,255,255,.04); font-size:.87rem; }
-.h-row .d { color:rgba(255,255,255,.32); }
-.h-row .t { color:rgba(255,255,255,.48); }
+.h-row .d { color:rgba(255,255,255,.6); }
+.h-row .t { color:rgba(255,255,255,.75); }
 .h-row.today { background:rgba(240,120,24,.07); margin:0 -.5rem; padding:.6rem .5rem; border-radius:3px; }
 .h-row.today .d { color:var(--saffron); font-weight:600; }
 .h-row.today .t { color:rgba(255,255,255,.75); }
@@ -911,7 +1004,7 @@ footer {
 .ft-col h4 { font-size:.62rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:rgba(255,255,255,.2); margin-bottom:1.3rem; }
 .ft-col ul { list-style:none; }
 .ft-col ul li { margin-bottom:.6rem; }
-.ft-col ul a { color:rgba(255,255,255,.32); font-size:.9rem; transition:color .2s; }
+.ft-col ul a { color:rgba(255,255,255,.55); font-size:.9rem; transition:color .2s; }
 .ft-col ul a:hover { color:var(--saffron); }
 .ft-bottom { display:flex; justify-content:space-between; align-items:center; padding-top:2.5rem; flex-wrap:wrap; gap:1rem; }
 .ft-bottom p { color:rgba(255,255,255,.14); font-size:.78rem; }
@@ -931,7 +1024,7 @@ footer {
   .dc.big { grid-column:1/3; grid-row:1; }
   .ft-top { grid-template-columns:1fr 1fr; gap:2rem; }
   .trust-bar { grid-template-columns:1fr 1fr; gap:1.2rem; }
-  .rev-grid { grid-template-columns:1fr 1fr; }
+  .rev-card { flex:0 0 calc(48% - .5rem); }
   .how-grid { grid-template-columns:1fr 1fr; }
 }
 
@@ -954,7 +1047,7 @@ footer {
   /* STICKY BAR */
   #sticky-bar { padding:.6rem 1rem; gap:.4rem; }
   .sticky-text { font-size:.78rem; white-space:nowrap; }
-  .sticky-text span { display:none; }
+  .sticky-pre { display:none; }
   .sticky-platforms { gap:.35rem; }
   .sticky-plat { padding:.42rem .6rem; font-size:.68rem; display:inline-flex; align-items:center; gap:.3rem; }
 
@@ -1015,6 +1108,12 @@ footer {
     margin-bottom:.9rem; line-height:.92;
     opacity:1; animation:none;
   }
+  .steam-container { width:90px; }
+  .sw { width:10px; filter:blur(3.5px); }
+  .sw1 { height:45px; }
+  .sw2 { height:58px; }
+  .sw3 { height:50px; }
+  .sw4 { height:40px; }
   .hero-sub {
     font-size:.88rem; line-height:1.65;
     margin-bottom:1.4rem; max-width:100%;
@@ -1080,7 +1179,7 @@ footer {
   .sc-name { font-size:1.5rem; }
   .sc-tag { font-size:.56rem; }
   .sc-line { width:24px; margin:.5rem 0; }
-  .sc-desc { color:rgba(255,255,255,.55); max-height:60px; font-size:.78rem; }
+  .sc-desc { color:rgba(255,255,255,.9); max-height:60px; font-size:.78rem; font-weight:400; }
 
   /* SIGNATURE DISHES */
   .sig-section { padding:4rem 1.2rem; }
@@ -1095,8 +1194,8 @@ footer {
   .dc-body { padding:1rem; }
   .dc-name { font-size:1rem; }
   .dc-price { font-size:.95rem; }
-  .dc-desc { color:rgba(255,255,255,.45); font-size:.75rem; }
-  .dc-btn { opacity:1; transform:none; font-size:.68rem; padding:.35rem .7rem; }
+  .dc-desc { color:rgba(255,255,255,.82); font-size:.75rem; }
+  .dc-btn { display:none; }
   .dc-foot { margin-top:.6rem; }
 
   /* SATURDAY */
@@ -1111,7 +1210,7 @@ footer {
   .btn-white { width:100%; text-align:center; padding:.85rem 1.2rem; font-size:.88rem; }
 
   /* GALLERY */
-  .gallery-img { width:150px; height:185px; }
+  .gallery-img { width:200px; height:240px; }
 
   /* HOW TO ORDER */
   .how { padding:4rem 1.2rem; }
@@ -1139,12 +1238,14 @@ footer {
   .btn-saffron { padding:.8rem 1.6rem; font-size:.86rem; width:100%; justify-content:center; }
 
   /* REVIEWS */
-  .reviews { padding:4rem 1.2rem; }
+  .reviews { padding:4rem 0; }
+  .reviews-inner { padding:0 1.2rem; }
   .reviews-head .s-title { font-size:clamp(1.4rem,6vw,1.9rem); }
-  .rev-grid { grid-template-columns:1fr; gap:.7rem; }
-  .rev-card { padding:1.2rem; }
+  .rev-track { padding:0 1.2rem 1.2rem; gap:.75rem; }
+  .rev-card { flex:0 0 82%; padding:1.2rem; }
   .rev-text { font-size:.88rem; line-height:1.6; }
   .rev-stars { font-size:.8rem; margin-bottom:.6rem; }
+  .rev-arrow { width:36px; height:36px; font-size:.85rem; }
 
   /* ORDER SECTION */
   .order-section { padding:4rem 1.2rem; gap:2rem; }
@@ -1166,7 +1267,7 @@ footer {
   .map-box { height:240px; }
 
   /* THEME TOGGLE */
-  #theme-toggle { top:auto; bottom:5rem; transform:none; padding:.5rem .45rem; }
+  #theme-toggle { top:auto; bottom:7rem; transform:none; padding:.5rem .45rem; }
   #theme-toggle .tt-label { font-size:.48rem; }
 
   /* FOOTER */
@@ -1230,12 +1331,61 @@ body.light-mode .nav-links a { color:rgba(60,22,8,.5); }
 body.light-mode .nav-links a:hover,
 body.light-mode .nav-links a.active { color:var(--chilli); }
 
+/* hamburger */
+.nav-hamburger {
+  display:none;
+  flex-direction:column; justify-content:center; align-items:center;
+  gap:5px; width:40px; height:40px; cursor:pointer;
+  background:none; border:none; padding:4px; flex-shrink:0;
+}
+.nav-hamburger span {
+  display:block; width:22px; height:2px;
+  background:#fff; border-radius:2px;
+  transition:transform .3s, opacity .3s;
+}
+.nav-hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity:0; }
+.nav-hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+
+/* mobile drawer */
+.nav-mobile-drawer {
+  display:none;
+  position:fixed; top:60px; left:0; right:0; z-index:399;
+  background:rgba(22,12,4,.98);
+  backdrop-filter:blur(24px);
+  border-bottom:1px solid rgba(240,120,24,.2);
+  padding:1.2rem 1.5rem 1.5rem;
+  flex-direction:column; gap:.25rem;
+}
+.nav-mobile-drawer.open { display:flex; }
+.nav-mobile-drawer a {
+  color:rgba(255,255,255,.75); font-size:1rem; font-weight:500;
+  padding:.75rem 0; border-bottom:1px solid rgba(255,255,255,.07);
+  transition:color .2s; text-decoration:none;
+}
+.nav-mobile-drawer a:last-child { border-bottom:none; }
+.nav-mobile-drawer a:hover, .nav-mobile-drawer a.active { color:var(--saffron); }
+.nav-mobile-drawer .drawer-cta {
+  margin-top:.75rem; background:var(--saffron); color:var(--dark);
+  padding:.75rem 1.4rem; font-weight:700; font-size:.9rem;
+  border-radius:2px; text-align:center; border-bottom:none;
+}
+.nav-mobile-drawer .drawer-cta:hover { background:var(--saffron-hot); color:var(--dark); }
+
 /* mobile */
 @media(max-width:768px) {
   #site-nav, nav:not([class]), nav.site-nav { padding:0 1.2rem; height:60px; }
   .nav-links { display:none; }
   .nav-logo { font-size:1.25rem; }
+  .nav-cta { display:none; }
+  .nav-hamburger { display:flex; }
 }
+
+body.light-mode .nav-hamburger span { background:var(--dark); }
+body.light-mode .nav-mobile-drawer { background:rgba(253,246,230,.98); }
+body.light-mode .nav-mobile-drawer a { color:rgba(60,22,8,.6); border-bottom-color:rgba(88,48,24,.1); }
+body.light-mode .nav-mobile-drawer a:hover,
+body.light-mode .nav-mobile-drawer a.active { color:var(--chilli); }
 
 </style>
 </head>
@@ -1253,7 +1403,7 @@ body.light-mode .nav-links a.active { color:var(--chilli); }
 
 <!-- ══ STICKY ORDER BAR ══ -->
 <div id="sticky-bar">
-  <div class="sticky-text">Hungry? <span>Order now</span></div>
+  <div class="sticky-text"><span class="sticky-pre">Hungry? </span><span>Order now</span></div>
   <div class="sticky-platforms">
     <a href="https://deliveroo.co.uk/menu/london/sutton/mumbai-adda" target="_blank" rel="noopener" class="sticky-plat sp-deliveroo">🛵 Deliveroo</a>
     <a href="https://www.just-eat.co.uk/restaurants-mumbai-adda-sutton/menu" target="_blank" rel="noopener" class="sticky-plat sp-justeat">🍽 Just Eat</a>
@@ -1274,7 +1424,19 @@ body.light-mode .nav-links a.active { color:var(--chilli); }
     <li><a href="find-us.html">Find Us</a></li>
   </ul>
   <a href="#order" class="nav-cta">Order Now →</a>
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- mobile nav drawer -->
+<div class="nav-mobile-drawer" id="nav-mobile-drawer">
+  <a href="index.html" class="active">Home</a>
+  <a href="menu.html">Menu</a>
+  <a href="our-story.html">Our Story</a>
+  <a href="find-us.html">Find Us</a>
+  <a href="#order" class="drawer-cta">Order Now →</a>
+</div>
 
 <!-- ══════════════ HERO ══════════════ -->
 <section class="hero">
@@ -1291,7 +1453,7 @@ body.light-mode .nav-links a.active { color:var(--chilli); }
     <div class="hero-eyebrow">Sutton's Mumbai Kitchen · Est. 2020</div>
     <h1 class="hero-h1">
       Close your<br>
-      <span class="italic">eyes. Smell</span>
+      <span class="italic">eyes. <span class="smell-wrap">Smell<span class="steam-container" aria-hidden="true"><span class="sw sw1"></span><span class="sw sw2"></span><span class="sw sw3"></span><span class="sw sw4"></span></span></span></span>
       <span class="mumbai-word">Mumbai.</span>
     </h1>
     <p class="hero-sub">
@@ -1498,8 +1660,8 @@ body.light-mode .nav-links a.active { color:var(--chilli); }
     <div class="s-eyebrow">It's easy</div>
     <h2 class="s-title-dark">Three steps to <em style="color:var(--chilli)">Mumbai</em> at your door.</h2>
   </div>
-  <div class="how-grid">
-    <div class="how-card reveal">
+  <div class="how-grid" id="how-grid">
+    <div class="how-card">
       <div class="how-num">1</div>
       <div class="how-icon">📱</div>
       <div class="how-title">Pick your <em>platform</em></div>
@@ -1511,13 +1673,13 @@ body.light-mode .nav-links a.active { color:var(--chilli); }
         <span class="how-plat hp-w">WhatsApp</span>
       </div>
     </div>
-    <div class="how-card reveal">
+    <div class="how-card">
       <div class="how-num">2</div>
       <div class="how-icon">🍛</div>
       <div class="how-title">Choose your <em>food</em></div>
       <div class="how-desc">Browse the full menu — Bombay Bites, Indo-Chinese, curries, rolls, biryani and more. Everything made fresh when you order.</div>
     </div>
-    <div class="how-card reveal">
+    <div class="how-card">
       <div class="how-num">3</div>
       <div class="how-icon">🚀</div>
       <div class="how-title">We cook, <em>you eat</em></div>
@@ -1545,31 +1707,56 @@ body.light-mode .nav-links a.active { color:var(--chilli); }
 
 <!-- ══ REVIEWS ══ -->
 <section class="reviews">
-  <div class="reviews-head reveal">
-    <div>
-      <div class="s-eyebrow">What people say</div>
-      <h2 class="s-title">They came <em>once</em>.<br>They keep coming back.</h2>
+  <div class="reviews-inner">
+    <div class="reviews-head reveal">
+      <div>
+        <div class="s-eyebrow">What people say</div>
+        <h2 class="s-title">They came <em>once</em>.<br>They keep coming back.</h2>
+      </div>
+      <div class="rev-arrows">
+        <button class="rev-arrow" id="rev-prev" aria-label="Previous review">&#8592;</button>
+        <button class="rev-arrow" id="rev-next" aria-label="Next review">&#8594;</button>
+      </div>
     </div>
   </div>
-  <div class="rev-grid">
-    <div class="rev-card reveal">
+  <div class="rev-track" id="rev-track">
+    <div class="rev-card">
       <div class="rev-stars">★★★★★</div>
       <div class="rev-text">"Best Vada Pav I've had outside Mumbai. It reminded me of home — the chutney, the texture, everything. I ordered twice in one week."</div>
       <div class="rev-author">Priya S. — Sutton</div>
       <div class="rev-dish">Vada Pav</div>
     </div>
-    <div class="rev-card reveal">
+    <div class="rev-card">
       <div class="rev-stars">★★★★★</div>
       <div class="rev-text">"The Butter Chicken is unreal. Creamy, rich, the right amount of spice. This is proper home cooking — not restaurant food dressed up as takeaway."</div>
       <div class="rev-author">James R. — Cheam</div>
       <div class="rev-dish">Butter Chicken</div>
     </div>
-    <div class="rev-card reveal">
+    <div class="rev-card">
       <div class="rev-stars">★★★★★</div>
       <div class="rev-text">"Saturday Biryani is absolutely something else. We drive from Worcester Park just for it. Worth every mile and every minute of the wait."</div>
       <div class="rev-author">Amir K. — Worcester Park</div>
       <div class="rev-dish">Chicken Biryani</div>
     </div>
+    <div class="rev-card">
+      <div class="rev-stars">★★★★★</div>
+      <div class="rev-text">"Ordered the Karak Chai on a rainy Tuesday evening. Sat by the window, first sip — and I was back on a Mumbai street in the monsoon. I don't know how they do it from a kitchen in Sutton, but they do."</div>
+      <div class="rev-author">Meera T. — Morden</div>
+      <div class="rev-dish">Karak Chai</div>
+    </div>
+    <div class="rev-card">
+      <div class="rev-stars">★★★★★</div>
+      <div class="rev-text">"My mum grew up in Mumbai. She doesn't give compliments easily. She had the Butter Chicken and went quiet for a moment, then said 'this tastes like home.' That's the highest praise she's ever given a takeaway."</div>
+      <div class="rev-author">Rohan P. — Carshalton</div>
+      <div class="rev-dish">Butter Chicken</div>
+    </div>
+  </div>
+  <div class="rev-dots" id="rev-dots">
+    <button class="rev-dot active" data-idx="0"></button>
+    <button class="rev-dot" data-idx="1"></button>
+    <button class="rev-dot" data-idx="2"></button>
+    <button class="rev-dot" data-idx="3"></button>
+    <button class="rev-dot" data-idx="4"></button>
   </div>
 </section>
 
@@ -1706,14 +1893,14 @@ body.light-mode .nav-links a.active { color:var(--chilli); }
       </ul>
       <h4 style="margin-top:1.5rem">Hours</h4>
       <ul>
-        <li><a href="#">Mon–Thu: 11:30–21:00</a></li>
-        <li><a href="#">Fri–Sat: 11:30–22:00</a></li>
-        <li><a href="#">Sun: 11:30–21:00</a></li>
+        <li style="color:rgba(255,255,255,.5);font-size:.9rem;margin-bottom:.6rem">Mon–Thu: 11:30–21:00</li>
+        <li style="color:rgba(255,255,255,.5);font-size:.9rem;margin-bottom:.6rem">Fri–Sat: 11:30–22:00</li>
+        <li style="color:rgba(255,255,255,.5);font-size:.9rem;margin-bottom:.6rem">Sun: 11:30–21:00</li>
       </ul>
     </div>
   </div>
   <div class="ft-bottom">
-    <p>© 2025 Mumbai Adda · 10 Station Parade, Brighton Road, Sutton SM2 5AD, London</p>
+    <p>© 2026 Mumbai Adda · 10 Station Parade, Brighton Road, Sutton SM2 5AD, London</p>
     <p>Made with <span>🧡</span> for Blossom</p>
   </div>
 </footer>
@@ -1732,6 +1919,21 @@ window.addEventListener('scroll',()=>{
   bar.classList.toggle('visible', y > window.innerHeight * 0.6);
   wa.classList.toggle('visible',  y > window.innerHeight * 0.4);
 },{passive:true});
+
+/* ── Mobile hamburger ── */
+const hamburger = document.getElementById('nav-hamburger');
+const mobileDrawer = document.getElementById('nav-mobile-drawer');
+hamburger.addEventListener('click', () => {
+  const isOpen = mobileDrawer.classList.toggle('open');
+  hamburger.classList.toggle('open', isOpen);
+  hamburger.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+});
+mobileDrawer.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    mobileDrawer.classList.remove('open');
+    hamburger.classList.remove('open');
+  });
+});
 
 /* ── Order Now dropdown ── */
 function toggleOrderDropdown(e) {
@@ -1763,6 +1965,69 @@ const io = new IntersectionObserver(entries=>{
 document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el=>{
   io.observe(el);
 });
+
+/* ── Reviews carousel ── */
+(function(){
+  const track  = document.getElementById('rev-track');
+  const prev   = document.getElementById('rev-prev');
+  const next   = document.getElementById('rev-next');
+  const dots   = document.querySelectorAll('.rev-dot');
+  if (!track) return;
+
+  const cards  = track.querySelectorAll('.rev-card');
+  let current  = 0;
+
+  function scrollTo(idx) {
+    current = Math.max(0, Math.min(idx, cards.length - 1));
+    const card = cards[current];
+    track.scrollTo({ left: card.offsetLeft - track.offsetLeft - parseInt(getComputedStyle(track).paddingLeft), behavior:'smooth' });
+    dots.forEach((d,i) => d.classList.toggle('active', i === current));
+    prev.disabled = current === 0;
+    next.disabled = current === cards.length - 1;
+  }
+
+  prev.addEventListener('click', () => scrollTo(current - 1));
+  next.addEventListener('click', () => scrollTo(current + 1));
+  dots.forEach(d => d.addEventListener('click', () => scrollTo(+d.dataset.idx)));
+
+  /* sync dots on manual scroll */
+  let scrollTimer;
+  track.addEventListener('scroll', () => {
+    clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(() => {
+      let closest = 0, minDist = Infinity;
+      cards.forEach((c,i) => {
+        const dist = Math.abs(c.offsetLeft - track.offsetLeft - track.scrollLeft - parseInt(getComputedStyle(track).paddingLeft));
+        if (dist < minDist) { minDist = dist; closest = i; }
+      });
+      current = closest;
+      dots.forEach((d,i) => d.classList.toggle('active', i === current));
+      prev.disabled = current === 0;
+      next.disabled = current === cards.length - 1;
+    }, 80);
+  }, { passive:true });
+
+  /* drag to scroll (desktop) */
+  let isDragging = false, startX, startScroll;
+  track.addEventListener('mousedown', e => { isDragging=true; startX=e.pageX; startScroll=track.scrollLeft; track.style.scrollBehavior='auto'; });
+  window.addEventListener('mousemove', e => { if(!isDragging) return; track.scrollLeft = startScroll-(e.pageX-startX); });
+  window.addEventListener('mouseup',   () => { isDragging=false; track.style.scrollBehavior='smooth'; });
+
+  scrollTo(0);
+})();
+
+/* ── How-to-order: staggered slide-up ── */
+const howGrid = document.getElementById('how-grid');
+if (howGrid) {
+  const howObserver = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      howGrid.querySelectorAll('.how-card').forEach(card => card.classList.add('card-in'));
+      howObserver.disconnect();
+    });
+  }, { threshold: 0.15 });
+  howObserver.observe(howGrid);
+}
 
 /* ── Theme Toggle ── */
 function toggleTheme() {
